@@ -12,7 +12,7 @@ import CNTower from "./assets/CNTower.svg";
 function App(){
   return <div> c
     <div class="frontGroup" style ={{zIndex: 3, position: "relative" }}>
-      <p>Hi I'm <b>Derek Song</b></p>
+      <h3>Hi I'm <b>Derek Song</b></h3>
       <h1>ui/ux, graphic design, & front-end developer</h1>
       <h2>also interested in urban planning, data visualization</h2>
       <div class="socialMedia">
@@ -26,7 +26,8 @@ function App(){
     </div>
     <GOtrain style ={{zIndex: 2, position: "relative"}}/>
 
-    <div style={{top: `5vw`, position:"relative", right: 0}}>
+    <div style={{top: `5vw`, position:"relative", right: 0,
+            marginBottom: `6vw`}}>
     <img src={CNTower} alt="CN Tower" width="800rem" style={{
             position: "absolute", bottom: 0, right: 0,}} />
     
@@ -42,8 +43,10 @@ function App(){
       
       
     <div class="textBody"> 
-      <h1>ui/ux, graphic design, & front-end developer</h1>
-      <h2>also interested in urban planning, data visualization</h2>
+      <h1>experience</h1>
+      <p>I’m currently working at the <b>City of Toronto</b> as an Graphics Commuications Assistant, handling graphic design, leading a biking UX project, and helping with digital communications & data visualization.</p>
+      <p>I’m also doing a Computer Science degree at <b>Wilfrid Laurier University</b> with a minor of UX Design and North American Studies. </p>
+      <p>This page is a work-in-progress and will be updated to include my portfolio. In the meantime, welcome :)</p>
     </div>
   </div>
 }
