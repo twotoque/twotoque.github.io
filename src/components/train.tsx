@@ -7,15 +7,13 @@ import CNTower from "../assets/CNTower.svg";
 const GOTrainComponent = () => {
   const [position, setPosition] = useState(0);
   useEffect(() => {
-    
     let animationFrameID: number;
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setPosition(scrollPosition * 10);
-
-      cancelAnimationFrame(animationFrameID); 
+      cancelAnimationFrame(animationFrameID);
       animationFrameID = requestAnimationFrame(() => {
-        setPosition(scrollPosition);
+        setPosition(scrollPosition * 0.1); 
       });
     };
 
