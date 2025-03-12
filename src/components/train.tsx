@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import GOTrain from "../assets/GOTrain.svg";
+
+import CNTower from "../assets/CNTower.svg";
+import GrainGrass from "../assets/GrainGrass.svg";
 
 
 const GOTrainComponent = () => {
   const [position, setPosition] = useState(0);
   useEffect(() => {
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setPosition(scrollPosition *10);
+      setPosition(scrollPosition *3);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -18,14 +22,32 @@ const GOTrainComponent = () => {
   }, []);
 
   return (
+    <div>
+    <img src={CNTower} alt="CN Tower" width="800rem" 
+        style={{
+            position: "absolute", 
+            top: `15vw`,
+            right: 0,
+            zIndex: 1}} />
     <div
       style={{
-        position: "absolute",
-        right: `${position -500}px`,
+        position: "relative",
+        right: `${position-50}vw`,
+        top: `5vw`,
         transition: "right 0.1s",
+        zIndex: 3
       }}
     >
-        <img src={GOTrain} alt="GO Train" width="2000rem"/>
+        <img src={GOTrain} alt="GO Train" width="2500rem"/>
+    </div>
+    <img src={GrainGrass} alt="Grain Grass" 
+        style={{
+            position: "relative",
+            top: `5vw`,
+            left: "-20vw",
+            width: "105vw",
+            right: 0,
+            zIndex: 2}} />
     </div>
   );
 };
