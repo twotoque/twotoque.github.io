@@ -27,11 +27,14 @@ h1{
 }
 
 .frontGroup{
-  margin-left: 25rem;
+  margin-left: 17rem;
   line-height: 1rem;
   padding-top: 15vw;
 }
 
+.textBody{
+  padding: 5rem;
+}
 .socialMedia {
   display:flex;
   flex-direction: row;
