@@ -35,7 +35,7 @@ const GOTrainComponent = () => {
         zIndex: 3
       }}
     >
-        <img src={GOTrain} alt="GO Train" width="2500rem"/>
+        <img className ="goTrain" src={GOTrain} alt="GO Train" width="2500rem"/>
     </div>
     </div>
   );
