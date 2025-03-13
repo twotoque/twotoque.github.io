@@ -40,7 +40,7 @@ function App(){
     
       
       
-    <div class="textBody"> 
+    <div className="textBody"> 
       <motion.h1 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
         experience
       </motion.h1>

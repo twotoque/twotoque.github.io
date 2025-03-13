@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import GOTrain from "../assets/GOTrain.svg";
 
-import CNTower from "../assets/CNTower.svg";
 
 
 const GOTrainComponent = () => {
