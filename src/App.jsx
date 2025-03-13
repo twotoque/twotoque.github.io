@@ -45,7 +45,7 @@ function App(){
         experience
       </motion.h1>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-        I’m currently working at the <b>City of Toronto</b> as an Graphics Commuications Assistant, handling graphic design, leading a biking UX project, and helping with digital communications & data visualization.
+        I’m currently working at the <b>City of Toronto</b> as an Graphics Commuications Assistant for Ward 23 Scarborough North, handling graphic design, leading a biking UX project, and helping with digital communications & data visualization.
       </motion.p>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
        I’m also doing a Computer Science degree at <b>Wilfrid Laurier University</b> with a minor of UX Design and North American Studies.
@@ -53,6 +53,9 @@ function App(){
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
        This page is a work-in-progress and will be updated to include my portfolio. In the meantime, welcome :)
       </motion.p>
+      <motion.h5 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
+       Last updated: March 12, 2025
+      </motion.h5>
 
       
     </div>
