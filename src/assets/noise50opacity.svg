@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:svgjs="http://svgjs.dev/svgjs" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 700">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#nnnoise-filter);
+      }
+
+      .cls-1, .cls-2 {
+        opacity: .5;
+      }
+
+      .cls-3 {
+        fill: #09f;
+      }
+
+      .cls-2 {
+        fill-opacity: 0;
+      }
+    </style>
+    <filter id="nnnoise-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence x="0%" y="0%" width="100%" height="100%" baseFrequency="0.147" numOctaves="4" result="turbulence" stitchTiles="stitch" type="fractalNoise"/>
+      <feSpecularLighting x="0%" y="0%" width="100%" height="100%" in="turbulence" result="specularLighting" specularConstant="1.1" specularExponent="20" surfaceScale="20">
+        <feDistantLight azimuth="3" elevation="100"/>
+      </feSpecularLighting>
+      <feColorMatrix x="0%" y="0%" width="100%" height="100%" in="specularLighting" result="colormatrix" type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.5, SVG Export Plug-In . SVG Version: 1.2.0 Build 176)  -->
+  <g>
+    <g id="Layer_1">
+      <rect class="cls-2" width="700" height="700"/>
+      <g class="cls-1">
+        <rect class="cls-3" width="700" height="700"/>
+      </g>
+    </g>
+  </g>
+</svg>

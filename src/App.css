@@ -48,6 +48,7 @@ h1{
   line-height: 3.7rem;
 }
 .textBody{
+  padding-top:4rem;
   margin-left: 17rem;
   margin-right: 17rem;
   margin-bottom: 15rem;
@@ -83,9 +84,9 @@ h1{
 
 .cnTower {
   position: absolute;
-  bottom: 4rem;
+  bottom: 0rem;
   right: 0;
-  max-width: 70rem;
+  min-width: 170rem;
 }
 
 .grass {
@@ -99,18 +100,34 @@ h1{
   z-index: 2;
 }
 
+a {
+  pointer-events: auto;
+  z-index: 10;
+}
+
+@media (max-width: 1780px) {
+  .cnTower {
+    min-width: 140rem;
+  }
+}
 @media (max-width: 1200px) {
+  html, body {
+    background-image: url("assets/noise50opacity.svg"); 
+  }
   .torontoContainer{
     padding-top: 9rem;
   }
   .cnTower {
     bottom: 10rem;
     right: -14rem;
-    width:60rem;
+    min-width: 100rem;
     height:auto;
     z-index: 0;
   }
   
+  .textBody{
+    padding-top:2rem;
+  }
   
   .goTrain{
     top:10rem;
