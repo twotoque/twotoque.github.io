@@ -63,7 +63,7 @@ h5{
 .frontGroup{
   position: "relative";
   z-index: 3;
-  margin-left: 17rem;
+  margin-left: 18rem;
   line-height: 1rem;
   padding-top: 10vw;
   max-width: 40%;
@@ -72,10 +72,16 @@ h5{
 .frontGroup h1{
   line-height: 3.7rem;
 }
+
+.headerBody{
+  margin-left: 18rem;
+  margin-right: 18rem;
+}
+
 .textBody{
   padding-top:4rem;
-  margin-left: 17rem;
-  margin-right: 17rem;
+  margin-left: 18rem;
+  margin-right: 18rem;
   margin-bottom: 15rem;
 }
 .socialMedia {
