@@ -2,8 +2,51 @@ import React from "react";
 import { Link } from "react-router-dom";
 import  Header from "../components/Header";
 import  CustomButton from "../components/Button";
+import Process from "../components/Process";
+import VerticalTimeline from "../components/VerticalTimeline";
+import Findings from "../components/Finding";
+
 
 function ProjectPage() {
+    const steps = ["Empathize", "Define", "Ideate", "Prototype", "Test"];
+    
+    const verticlaTime = [
+        "Identify daily pain points e.g. congestion, delays, accessibility",
+        "Assess how commuters make sustainable choices and what motivates/prevents them",
+        "Assess how travel costs influence commuter behaviour and the appeal of eco-friendly incentives",
+        "Examine importance of catering to the needs of those with limited mobility",
+    ];
+
+    const findingsData = [
+        {
+          title: "Market trends:",
+          bgColour: "bg-[#266670]",
+          textColour: "text-white",
+          items: [
+            {
+              text: "Increased shift towards sustainable transport",
+              subitems: [
+                <p> Sustainable Development Goals encourages shift to lower-emission transport </p>,
+                <p> The amount of Canadians using green transportation methods are growing" <a className="text-white" href="#">(Statistics Canada, 2023)</a></p>
+              ],
+            },
+          ],
+        },
+        {
+          title: "Consumer trends:",
+          bgColour: "bg-[#72ad6c]",
+          textColour: "text-white",
+          items: [
+            {
+              text: "Shift for accessibility and convenience",
+              subitems: [<p> 27% of Canadians live with a disability {" "} <a className="text-white" href="#">(Canadian Survey on Disability, 2022)</a></p>
+              ],
+            },
+          ],
+        },
+      ];
+      
+
   return (
     <> 
     <Header/>
@@ -49,12 +92,40 @@ function ProjectPage() {
     
         
     <section style={{ background: '#266670' }} >
-            <div className="pt-10 pb-10 headerBody !text-white">
-                <h4 className="!font-light mt-0 mb-4">DESIGN PROMPT</h4>
-                <h3 className=" m-0">How might we design sustainable travel options that increase efficiency while enhancing the quality of life for daily commuters?</h3>
-            </div>
-        </section>
+        <div className="pt-10 pb-10 headerBody !text-white">
+            <h4 className="!font-light mt-0 mb-4">DESIGN PROMPT</h4>
+            <h3 className=" m-0">How might we design sustainable travel options that increase efficiency while enhancing the quality of life for daily commuters?</h3>
+        </div>
+    </section>
+
         
+    <section >
+        <div className="pt-10 pb-10 headerBody">
+            <h4 className="!font-light mt-0 mb-4">OUR SOLUTION</h4>
+            <p>Our solution was a tool designed to encourage transit riders to choose cleaner transportation options while being easy for transit agencies to implement. It also aimed to enhance the user experience by simplifying transit navigation and providing personalized options based on their needs, such as accessibility and minimal transfers. </p>
+            <p className="pb-5">In order to do this, we decided to go through a user-first design process to further refine our solution.</p>
+            <Process steps={steps}  bgColor="bg-[#266670]"  />       
+        </div>
+    </section>
+
+    <section>  
+        <div className="pt-10 pb-10 headerBody">
+            <h4 className="!font-light mt-0 mb-4">EMPATHIZE: RESEARCH</h4>
+                <p>Due to the time constraints of the challenge, we mainly focused on secondary research. Our goals were:</p>
+                <VerticalTimeline steps={verticlaTime} bgColor="bg-[#266670]" />
+                
+        </div>
+    </section>
+
+    <section>  
+        <div className="pt-10 pb-10 headerBody">
+            <h4 className="!font-light mt-0 mb-4">EMPATHIZE: WHAT WE FOUND</h4>
+                <p>Our conclusions were defined into 2 parts: </p>       
+                <Findings findingsObject={findingsData}/>
+        </div>
+    </section>
+
+
     </>
   );
 }

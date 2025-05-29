@@ -21,7 +21,7 @@ html, body {
   width: 100%;
 }
 
-h3, p {
+h3, p, ul, li {
   font-family: neue-haas-grotesk-text, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -136,6 +136,11 @@ a {
   z-index: 10;
 }
 
+.findings p {
+  margin-block: 0;
+}
+
+
 @media (max-width: 1780px) {
   .cnTower {
     min-width: 140rem;
@@ -155,9 +160,12 @@ a {
     height:auto;
     z-index: 0;
   }
+  .headerBody{
+    margin:2rem;
+  }
   
   .textBody{
-    padding-top:2rem;
+    margin:2rem;
   }
   
   .goTrain{
@@ -185,6 +193,10 @@ a {
     margin:1rem;
     margin-bottom:10rem;
     text-align: center;
+    
+  }
+  .headerBody{
+    margin:1rem;
   }
   .socialMedia {
     display:flex;  
