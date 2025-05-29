@@ -5,6 +5,7 @@ import  CustomButton from "../components/Button";
 import Process from "../components/Process";
 import VerticalTimeline from "../components/VerticalTimeline";
 import Findings from "../components/Finding";
+import Competitor from "../components/Competitor";
 
 
 function ProjectPage() {
@@ -47,6 +48,39 @@ function ProjectPage() {
       ];
       
 
+      const competitorData = [
+        {
+          title: "Transit App",
+          bgColour: "bg-white",
+          textColour: "text-black",
+          strengths: ["Simple interface", "Real-time data"],
+          weaknesses: ["Limited sustainablity tracking"],
+          image: "/projects/transitbloom/transit.png",
+
+        },
+        {
+          title: "Moovit App",
+          bgColour: "bg-white",
+          textColour: "text-black",
+          strengths: ["Detailed transit directions","Real-time updates"],
+          weaknesses: ["No carbon tracking or rewards system"],
+          image: "/projects/transitbloom/moovit.png",
+
+        },
+      ];
+      
+    const opportunities = [
+        {
+          title: "Opportunities",
+          bgColour: "bg-white",
+          textColour: "text-black",
+          items: [
+            {text: "Integrate sustainability tracking and eco-rewards to fill competitor gaps",},
+            {text: "Provide an inclusive experience with accessibility features",},
+          ],
+        },
+    ];
+      
   return (
     <> 
     <Header/>
@@ -122,6 +156,14 @@ function ProjectPage() {
             <h4 className="!font-light mt-0 mb-4">EMPATHIZE: WHAT WE FOUND</h4>
                 <p>Our conclusions were defined into 2 parts: </p>       
                 <Findings findingsObject={findingsData}/>
+        </div>
+    </section>
+
+    <section>  
+        <div className="pt-10 pb-10 headerBody">
+            <h4 className="!font-light mt-0 mb-4">EMPATHIZE: COMPETITIVE ANALYSIS</h4>
+                <Competitor competitorObject={competitorData}/> 
+                <Findings findingsObject={opportunities}/>
         </div>
     </section>
 
