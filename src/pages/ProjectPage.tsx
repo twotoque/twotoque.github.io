@@ -7,6 +7,7 @@ import VerticalTimeline from "../components/VerticalTimeline";
 import Findings from "../components/Finding";
 import Competitor from "../components/Competitor";
 import ColourSwatch from "../components/ColourSwatch";
+import ScrollTop from "../components/ScrollTop";
 
 
 function ProjectPage() {

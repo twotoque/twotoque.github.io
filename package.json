@@ -2,12 +2,14 @@
   "name": "twotoque-website",
   "private": true,
   "version": "0.0.6",
+  "homepage": "https://twotoque.com/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "predeploy": "npm run build && powershell Copy-Item dist\\index.html dist\\404.html",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

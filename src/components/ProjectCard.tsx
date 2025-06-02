@@ -32,9 +32,7 @@ const ProjectCard = ({
               <p className="m-0 text-sm text-gray-500">{techStack}</p>
             )}
             {caseStudy && (
-              <p className="bg-green-100 text-green-800 rounded-full px-4 py-2 text-center w-fit">
-              In-depth case study available
-            </p>
+              <p className="bg-green-100 text-green-800 rounded-full px-4 py-2 text-center w-fit">In-depth case study available</p>
             )}
         </div>
       </div>

@@ -10,7 +10,7 @@ import GrainGrass from "../assets/GrainGrass.svg";
 import CNTower from "../assets/CNTower.svg";
 import ProjectCard from "../components/ProjectCard.tsx";
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -164,13 +164,13 @@ function App(){
       </motion.h5>
 
       
-    <div className="flex flex-wrap gap-6  items-start ">
+      <div className="flex flex-wrap gap-6 items-start">
         {projects.map((proj, idx) => (
-        <a key={idx} href={proj.link}  className="!no-underline">
-          <ProjectCard key={idx} {...proj} />
-          </a>
+          <Link key={idx} to={proj.link} className="!no-underline">
+            <ProjectCard {...proj} />
+          </Link>
         ))}
-    </div>
+      </div>
     </div>
     
   </div>
