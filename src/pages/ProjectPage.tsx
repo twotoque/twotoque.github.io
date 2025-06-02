@@ -163,6 +163,7 @@ function ProjectPage() {
         <div className="pt-10 pb-10 headerBody">
             <h4 className="!font-light mt-0 mb-4">EMPATHIZE: COMPETITIVE ANALYSIS</h4>
                 <Competitor competitorObject={competitorData}/> 
+                <br/>
                 <Findings findingsObject={opportunities}/>
         </div>
     </section>
