@@ -5,7 +5,7 @@ interface SubItem {
   }
   
 interface Item {
-    text: string;
+    text: string | React.ReactNode;
     subitems?: (string | React.ReactNode)[];
 }
   

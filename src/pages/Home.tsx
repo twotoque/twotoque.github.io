@@ -33,13 +33,14 @@ const projects = [
     link: "https://chromewebstore.google.com/detail/atomic-search-decay-calcu/emcigdjdlalmbmoaadjfdmlghckpplng?hl=en&authuser=1",
   },
   {
-    image: "/projects/globefm/thumbnail.gif",
-    title: "Globe.FM",
-    description: "An app that allows you to discover international artists and new songs. Best UI at UX Laurier Designathon 2025",
-    techStack: "Designed with Figma, Adobe After Effects, and Illustrator.",
-    type: "UI Design",
-    year: "2025",
-    link: "https://www.figma.com/proto/0pv2HFYgsvfYI7VYpPCXfr/UXL-Designathon-2025--Globe.FM?node-id=113-2801&p=f&t=MIgxPBNgKOrRkyCr-1&scaling=scale-down&content-scaling=fixed&page-id=61%3A627&starting-point-node-id=113%3A2801&show-proto-sidebar=1",
+    image: "/projects/transitbloom/thumbnail.gif",
+    title: "TransitBloom",
+    description: "Gamifies and awards sustainable transit choices. Third place at UXL Blueprint Designation, 2024.",
+    techStack: "Built with Figma and Adobe Illustrator.",
+    type: "UX Design",
+    year: "2024",
+    link: "/transitbloom",
+    caseStudy: "1",
   },
   {
     image: "/projects/cityoftorontoevent/thumbnail.gif",
@@ -87,13 +88,13 @@ const projects = [
     link: "https://docs.google.com/presentation/d/1mmPml3bYViGwdKy1LfTQjTGFgAUR1sMp8lleC3NClz8/edit?usp=sharing",
   },
   {
-    image: "/projects/transitbloom/thumbnail.gif",
-    title: "TransitBloom",
-    description: "Gamifies and awards sustainable transit choices. Third place at UXL Blueprint Designation, 2024.",
-    techStack: "Built with Figma and Adobe Illustrator.",
-    type: "UX Design",
-    year: "2024",
-    link: "https://www.figma.com/proto/BfvFXUcTYAlzNLayZaNqre/TransitBloom-Hi-Fi-Prototype?node-id=0-1578&p=f&t=tnLxNt790g9l1GI7-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
+    image: "/projects/globefm/thumbnail.gif",
+    title: "Globe.FM",
+    description: "An app that allows you to discover international artists and new songs. Best UI at UX Laurier Designathon 2025",
+    techStack: "Designed with Figma, Adobe After Effects, and Illustrator.",
+    type: "UI Design",
+    year: "2025",
+    link: "https://www.figma.com/proto/0pv2HFYgsvfYI7VYpPCXfr/UXL-Designathon-2025--Globe.FM?node-id=113-2801&p=f&t=MIgxPBNgKOrRkyCr-1&scaling=scale-down&content-scaling=fixed&page-id=61%3A627&starting-point-node-id=113%3A2801&show-proto-sidebar=1",
   },
   {
     image: "/projects/aco/thumbnail.gif",
@@ -123,7 +124,7 @@ function App(){
      </motion.h3>
       
     <motion.h1 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.3 }} className="text-lg text-gray-800 max-w-2xl text-center">
-      ui/ux, graphic design, & front-end developer
+      ui/ux, graphic design, & full-stack developer
     </motion.h1>
     <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
     also interested in urban planning, data visualization
@@ -156,10 +157,10 @@ function App(){
        I’m also doing a Computer Science degree at <b>Wilfrid Laurier University</b> with a minor of UX Design and North American Studies.
       </motion.p>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       This page is a work-in-progress and will be updated to include my portfolio. In the meantime, welcome :)
+       This page is a work-in-progress and is being be updated to include my portfolio. In the meantime, welcome :)
       </motion.p>
       <motion.h5 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       Last updated: May 24, 2025
+       Last updated: June 2, 2025
       </motion.h5>
 
       

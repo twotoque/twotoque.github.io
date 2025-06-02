@@ -8,6 +8,7 @@ const ProjectCard = ({
     techStack,
     type,
     year,
+    caseStudy,
   }) => {
     return (
       <div className="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col w-full md:max-w-[40rem] md:w-auto transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
@@ -29,6 +30,11 @@ const ProjectCard = ({
             )}
             {techStack && (
               <p className="m-0 text-sm text-gray-500">{techStack}</p>
+            )}
+            {caseStudy && (
+              <p className="bg-green-100 text-green-800 rounded-full px-4 py-2 text-center w-fit">
+              In-depth case study available
+            </p>
             )}
         </div>
       </div>

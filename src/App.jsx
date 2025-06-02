@@ -8,8 +8,7 @@ function App() {
     <div className="w-full !overflow-x-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/test" element={<Header />} />
-        <Route path="/testpage" element={<ProjectPage />} />
+        <Route path="/transitbloom" element={<ProjectPage />} />
       </Routes>
     </div>
   );

@@ -11,10 +11,15 @@ const Process: React.FC<StepFlowProps> = ({ steps, bgColor ="bg-gray-900" }) => 
     <div className="w-full  flex flex-wrap justify-center items-center bg-white rounded-xl pt-4 pb-4 shadow-sm w-full pl-0 pr-0">
       {steps.map((step, index) => (
         <div key={step} className="flex items-center">
-          <a
-            href={step.toLowerCase().replace(/\s+/g, "-")}
-            className={`${bgColor} no-underline text-white rounded-xl mt-2 px-6 py-6 text-sm font-semibold whitespace-nowrap transition-transform duration-200 hover:scale-105 hover:shadow-md`}
-          >
+            <a
+              href={`#${step.toLowerCase().replace(/\s+/g, "-")}`}
+              className={`${bgColor} no-underline text-white rounded-xl mt-2 px-6 py-6 text-sm font-semibold whitespace-nowrap transition-transform duration-200 hover:scale-105 hover:shadow-md`}
+              onClick={(e) => {
+                e.preventDefault();
+                const id = step.toLowerCase().replace(/\s+/g, "-");
+                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
             <p className="m-2">{step}</p>
           </a>
           {index < steps.length - 1 && (
