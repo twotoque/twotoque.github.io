@@ -7,7 +7,15 @@ import VerticalTimeline from "../components/VerticalTimeline";
 import Findings from "../components/Finding";
 import Competitor from "../components/Competitor";
 import ColourSwatch from "../components/ColourSwatch";
-import ScrollTop from "../components/ScrollTop";
+import { supabase } from '@/lib/supabaseClient';
+
+const { data, error } = await supabase.from('projects').select('*');
+console.log(import.meta.env.VITE_SUPABASE_URL);
+if (error) {
+  console.error("Error loading projects:", error.message);
+} else {
+  console.log("Projects data:", data);
+}
 
 
 function ProjectPage() {
@@ -210,6 +218,7 @@ const desirablity = [
     ],
   }
 ];
+
 
   return (
     <> 

@@ -5,10 +5,10 @@ const ProjectCard = ({
     image,
     title,
     description,
-    techStack,
+    tech_stack,
     type,
     year,
-    caseStudy,
+    case_study,
   }) => {
     return (
       <div className="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col w-full md:max-w-[40rem] md:w-auto transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
@@ -28,10 +28,10 @@ const ProjectCard = ({
             {description && (
             <p className="pt-3 text-sm text-gray-700">{description}</p>
             )}
-            {techStack && (
-              <p className="m-0 text-sm text-gray-500">{techStack}</p>
+            {tech_stack && (
+              <p className="m-0 text-sm text-gray-500">{tech_stack}</p>
             )}
-            {caseStudy && (
+            {case_study && (
               <p className="bg-green-100 text-green-800 rounded-full px-4 py-2 text-center w-fit">In-depth case study available</p>
             )}
         </div>
