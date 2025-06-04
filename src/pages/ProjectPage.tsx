@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import  Header from "../components/Header";
 import  CustomButton from "../components/Button";
@@ -19,6 +19,7 @@ if (error) {
 
 
 function ProjectPage() {
+  /*
     const steps = ["Empathize", "Define", "Prototype", "Test", "Feasibility", "Desirability"];
     
     const verticlaTime = [
@@ -218,52 +219,158 @@ const desirablity = [
     ],
   }
 ];
+*/
+/*
+  type FindingItem = {
+    text?: string;
+    subitems?: string[];
+  };
 
+  type Finding = {
+    id: number;
+    project_id: number;
+    section_type: string;
+    title: string;
+    bg_colour: string;
+    text_colour: string;
+    items: FindingItem[];
+  };
 
+  type Competitor = {
+    id: number;
+    project_id: number;
+    title: string;
+    bg_colour: string;
+    text_colour: string;
+    strengths: string[];
+    weaknesses: string[];
+    image: string;
+  };
+
+  type Swatch = {
+    id: number;
+    project_id: number;
+    title: string;
+    hex_colour: string;
+    bg_colour: string;
+  };
+
+  type ProcessStep = {
+    id: number;
+    project_id: number;
+    step_order: number;
+    step_text: string;
+  };
+
+  type ContentSection = {
+    id: number;
+    project_id: number;
+    section_key: string;
+    section_title: string;
+    paragraphs: string[];
+  };
+  
+  
+  const [findings, setFindings] = useState<Finding[]>([]);
+  const [competitors, setCompetitors] = useState<Competitor[]>([]);
+  const [swatches, setSwatches] = useState<Swatch[]>([]);
+  const [steps, setSteps] = useState<string[]>([]);
+  const [paragraphs, setParagraphs] = useState<ContentSection[]>([]);
+
+*/
+  type CaseLink = {
+    url: string;
+    label: string;
+  };
+  
+  type ProjectDetails = {
+    id: number;
+    project_id: number;
+    client: string;
+    role: string;
+    tools: string;
+    prompt: string;
+    solution: string;
+    overview: string;
+    hero_image: string;
+    case_links: CaseLink[];
+    projects: {
+      title: string;
+    };
+  };
+
+  
+  const [projectDetails, setProjectDetails] = useState<ProjectDetails | null>(null);
+  
+useEffect(() => {
+  async function fetchProjectDetails() {
+    const { data, error } = await supabase
+      .from("ux_project_interface") 
+      .select("*, projects(title)")
+      .eq("project_id", 22)
+      .single();
+      
+
+    if (!error) setProjectDetails(data);
+  }
+
+  fetchProjectDetails();
+}, []);
+if (!projectDetails) return null;
   return (
     <> 
     <Header/>
-    <section  className="min-h-[90vh] h-auto">
-        <div style={{ background: '#266670' }} >
-            <div className="headerBody flex justify-center">
-                <img className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain" src ="/projects/transitbloom/hero.png"></img>
+    <section className="min-h-[90vh] h-auto">
+    <div style={{ background: '#266670' }}>
+      <div className="headerBody flex justify-center">
+          <img
+            className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
+            src={projectDetails.hero_image}
+            alt="Hero"
+          />
+      </div>
+    </div>
+
+    {projectDetails && (
+      <div className="headerBody">
+        <h4 className="mb-0">UX Design</h4>
+        <h1 className="mt-0 mb-10">{projectDetails.projects.title}</h1>
+
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="md:w-5/7 space-y-4">
+            <h4 className="!font-light mb-4">OVERVIEW</h4>
+            <p>{projectDetails.overview}</p>
+            <p>{projectDetails.solution}</p>
+
+            <h4 className="!font-light mt-10 mb-4">CHECK IT OUT</h4>
+            <div className="flex gap-3 flex-wrap">
+              {projectDetails.case_links?.map((link, idx) => (
+                <CustomButton key={idx} href={link.url} label={link.label} />
+              ))}
             </div>
+          </div>
+
+          <div className="md:w-2/7 space-y-6">
+            <h4 className="!font-light mb-4">CLIENT</h4>
+            <p><b>{projectDetails.client}</b></p>
+
+            <h4 className="!font-light mb-4">MY ROLE</h4>
+            <p className="mb-1"><b>{projectDetails.role}</b></p>
+            <p className="mt-0 !text-sm">
+              Worked on high-fidelity prototypes, business pitch, branding, and research
+            </p>
+
+            <h4 className="!font-light mb-4">TOOLS</h4>
+            <p><b>{projectDetails.tools}</b></p>
+          </div>
         </div>
+      </div>
+    )}
+  </section>
 
-        <div className ="headerBody">
-            <h4 className="mb-0">UX Design</h4>
-            <h1 className="mt-0 mb-10">TransitBloom</h1>
-
-            <div className="flex flex-col md:flex-row gap-8">
-                <div className="md:w-5/7 space-y-4">
-                    <h4 className="!font-light mb-4">OVERVIEW</h4>
-                    <p>TransitBloom is an all-in-one transit travel app that incentivizes its users with a loyalty system for choosing greener transit options, adjusts travel options based on transit agency recommendations, accessibility options, and carbon output, as well as finds tips to board the right bus.</p>
-                    <p>Built with a team of two for UX Laurier’s Blueprint challenge in 2024. Won third place. </p>
-                    
-                    <h4 className="!font-light mt-10 mb-4">CHECK IT OUT</h4>
-                    <div className="flex gap-3">
-                        <CustomButton href="https://docs.google.com/presentation/d/1ocDZhh4hSl4hK-PlxIheZ8_lzwHKfZOv8RuNFOSvR7s/edit?usp=sharing" label ="Business Pitch"></CustomButton>
-                        <CustomButton href="https://www.figma.com/proto/BfvFXUcTYAlzNLayZaNqre/TransitBloom-Hi-Fi-Prototype?node-id=0-1578&p=f&t=tnLxNt790g9l1GI7-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" label ="Figma Prototype"></CustomButton>
-                    </div>
-                </div>
-                <div className="md:w-2/7 space-y-6">
-                    <h4 className="!font-light mb-4">CLIENT</h4>
-                    <p><b>UX Laurier Blueprint</b></p>
-                    
-                    <h4 className="!font-light mb-4">MY ROLE</h4>
-                    <p className="mb-1"><b>UX Designer</b></p>
-                    <p className="mt-0 !text-sm">Worked on high-fidelity prototypes, business pitch, branding, and research </p>
-
-                    <h4 className="!font-light mb-4">TOOLS</h4>
-                    <p><b>Figma, Adobe Illustrator,  Adobe Photoshop, Procreate</b></p>
-
-                </div>
-            </div>
-        </div>
-    </section>
 
     
-        
+    {/*  
     <section style={{ background: '#266670' }} >
         <div className="pt-10 pb-10 headerBody !text-white">
             <h4 className="!font-light mt-0 mb-4">DESIGN PROMPT</h4>
@@ -425,6 +532,7 @@ const desirablity = [
                 <Findings findingsObject={desirablity}/>
         </div>
     </section>
+    */}
 
     </>
   );
