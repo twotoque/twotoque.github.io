@@ -294,14 +294,60 @@ const desirablity = [
     overview: string;
     hero_image: string;
     case_links: CaseLink[];
+    colour: string;
+    secondary_colour: string;
     projects: {
       title: string;
     };
   };
 
+  type FindingItem = {
+    text?: string;
+    subitems?: string[];
+  };
+  
+  type Finding = {
+    id: number;
+    project_id: number;
+    section_type: string;
+    title: string;
+    bg_colour: string;
+    text_colour: string;
+    items: FindingItem[];
+  };
+
+  type ProcessStep = {
+    id: number;
+    project_id: number;
+    step_order: number;
+    step_text: string;
+  };
+
+  
+  type VerticalStep = {
+    id: number;
+    project_id: number;
+    step_order: number;
+    step_text: string;
+  };
+
+  type ProjectSection = {
+    id: number;
+    project_id: number;
+    section_key: string;
+    section_title: string;
+    paragraphs: string[];
+    images?: { url: string; alt?: string }[];
+  };
+  
+
   
   const [projectDetails, setProjectDetails] = useState<ProjectDetails | null>(null);
-  
+  const [findings, setFindings] = useState<Finding[]>([]);
+  const [processFlow, setProcessFlow] = useState<string[]>([]);
+  const [projectSections, setProjectSections] = useState<ProjectSection[]>([]);
+  const [verticalFlow, setVerticalFlow] = useState<string[]>([]);
+
 useEffect(() => {
   async function fetchProjectDetails() {
     const { data, error } = await supabase
@@ -316,12 +362,77 @@ useEffect(() => {
 
   fetchProjectDetails();
 }, []);
+
+  
+useEffect(() => {
+  async function fetchFindings() {
+    const { data, error } = await supabase
+      .from("findings")
+      .select("*")
+      .eq("project_id", 22);
+
+    if (!error && data) setFindings(data);
+  }
+
+  fetchFindings();
+}, []);
+
+  
+useEffect(() => {
+  async function fetchProcessFlow() {
+    const { data, error } = await supabase
+      .from("process_steps")
+      .select("*")
+      .eq("project_id", 22)
+      .order("step_order", { ascending: true });
+
+      if (!error && data) {
+        setProcessFlow(data.map((step: ProcessStep) => step.step_text));
+      }
+  }
+
+  fetchProcessFlow();
+}, []);
+
+  
+useEffect(() => {
+  async function fetchProjectSections() {
+    const { data, error } = await supabase
+      .from("project_sections")
+      .select("*")
+      .eq("project_id", 22);
+
+    if (!error && data) setProjectSections(data);
+  }
+
+  fetchProjectSections();
+}, []);
+
+
+useEffect(() => {
+  async function fetchVerticalFlow() {
+    const { data, error } = await supabase
+      .from("vertical_timeline")
+      .select("*")
+      .eq("project_id", 22)
+      .order("step_order", { ascending: true });
+
+      if (!error && data) {
+        setVerticalFlow(data.map((step: VerticalStep) => step.step_text));
+      }
+  }
+
+  fetchVerticalFlow();
+}, []);
+
 if (!projectDetails) return null;
+console.log(projectSections)
+
   return (
     <> 
     <Header/>
     <section className="min-h-[90vh] h-auto">
-    <div style={{ background: '#266670' }}>
+    <div style={{ background: projectDetails.colour }}>
       <div className="headerBody flex justify-center">
           <img
             className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
@@ -367,42 +478,99 @@ if (!projectDetails) return null;
       </div>
     )}
   </section>
-
-
-    
-    {/*  
-    <section style={{ background: '#266670' }} >
+  
+  <section style={{ background: projectDetails.colour }} >
         <div className="pt-10 pb-10 headerBody !text-white">
             <h4 className="!font-light mt-0 mb-4">DESIGN PROMPT</h4>
-            <h3 className=" m-0">How might we design sustainable travel options that increase efficiency while enhancing the quality of life for daily commuters?</h3>
+            <h3 className=" m-0">{projectDetails.prompt}</h3>
         </div>
     </section>
 
-        
+  
+  {processFlow && ( 
     <section >
         <div className="pt-10 pb-10 headerBody">
             <h4 className="!font-light mt-0 mb-4">OUR SOLUTION</h4>
-            <p>Our solution was a tool designed to encourage transit riders to choose cleaner transportation options while being easy for transit agencies to implement. It also aimed to enhance the user experience by simplifying transit navigation and providing personalized options based on their needs, such as accessibility and minimal transfers. </p>
-            <p className="pb-5">In order to do this, we decided to go through a user-first design process to further refine our solution.</p>
-            <Process steps={steps}  bgColor="bg-[#266670]"  />       
-        </div>
-    </section>
+            {projectSections
+              .find(section => section.section_title === "OUR SOLUTION")
+              ?.paragraphs
+              .map((text, idx, arr) => (
+                <p key={idx} className={idx === arr.length - 1 ? "pb-5" : ""}>
+                  {text}
+                </p>
+            ))}
 
-    <section id="empathize">  
-        <div className="pt-10 pb-10 headerBody">
-            <h4 className="!font-light mt-0 mb-4">EMPATHIZE: RESEARCH</h4>
-                <p>Due to the time constraints of the challenge, we mainly focused on secondary research. Our goals were:</p>
-                <VerticalTimeline steps={verticlaTime} bgColor="bg-[#266670]" />
-                
+
+            <Process steps={processFlow} bgColor="bg-[#266670]"  />       
         </div>
     </section>
+  )}
+    
+
+    {verticalFlow && ( 
+      <section id="empathize">  
+          <div className="pt-10 pb-10 headerBody">
+              <h4 className="!font-light mt-0 mb-4">EMPATHIZE: RESEARCH</h4>
+              
+                {projectSections
+                  .find(section => section.section_title === "EMPATHIZE: RESEARCH")
+                  ?.paragraphs
+                  .map((text, idx, arr) => (
+                    <p key={idx} className={idx === arr.length - 1 ? "pb-5" : ""}>
+                      {text}
+                    </p>
+                ))}
+                <div className="!pl-0">
+                <VerticalTimeline steps={verticalFlow} bgColor="bg-[#266670]" />
+                </div>
+                  
+          </div>
+      </section>
+  )}
+
+
+  {(() => {
+    const projectObject = projectSections.find(projectObject => projectObject.section_title === "EMPATHIZE: WHAT WE FOUND");
+
+    return projectObject ? (
+    <section>
+      <div className="pt-10 pb-10 headerBody">
+        <h4 className="!font-light mt-0 mb-4">EMPATHIZE: WHAT WE FOUND</h4>
+        {projectObject.paragraphs?.map((text, idx) => (
+          <p key={idx}>{text}</p>
+        ))}
+        <Findings
+        findingsObject={findings.map(f => ({
+          title: f.title,
+          bgColour: f.bg_colour,
+          textColour: f.text_colour,
+          items: (
+            typeof f.items === "string"
+              ? JSON.parse(f.items)
+              : Array.isArray(f.items)
+              ? f.items
+              : []
+          ).map((item: any) => ({
+            text: item.text,
+            subitems: item.subitems ?? []
+          }))
+        }))}
+      />
+      </div>
+    </section>
+    ) : null;
+  })()}
+    
+    {/*  
+        
+
 
     <section>  
         <div className="pt-10 pb-10 headerBody">
             <h4 className="!font-light mt-0 mb-4">EMPATHIZE: WHAT WE FOUND</h4>
                 <p>Our conclusions were defined into 2 parts: </p>       
                 <Findings findingsObject={findingsData}/>
-        </div>
+        </div>v
     </section>
 
     <section>  
