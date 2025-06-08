@@ -8,7 +8,7 @@ interface VerticalTimelineProps {
 const VerticalTimeline: React.FC<VerticalTimelineProps> = ({ steps, bgColor ="bg-gray-900"  }) => {
     return (
         <div className="relative">
-        <div className={`${bgColor} absolute left-7 md:left-8 xl:left-10 top-15 bottom-15 w-3 rounded-sm z-10`}/>
+        <div style={{ backgroundColor: bgColor }} className={`absolute left-7 md:left-8 xl:left-10 top-15 bottom-15 w-3 rounded-sm z-10`}/>
 
         <div className="flex flex-col gap-6">
             {steps.map((steps, index) => (
