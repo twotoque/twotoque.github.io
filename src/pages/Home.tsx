@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { supabase } from '@/lib/supabaseClient';
 import ProjectArcSection from "../components/HomeSection";
 import DataGradient from "../assets/Gradient1.svg";
-
+import PhotoArcSection from "../components/HomeSectionPhotos"
 /*
 const projects = [
   {
@@ -206,11 +206,23 @@ function App(){
             <ProjectCard {...proj} />
           </a>
         ))}
+        
       </div>
     </div>
-    
 
 <ProjectArcSection
+  number="01"
+  title="Data"
+  backgroundSvg={DataGradient}
+  tools={["Python", "Pandas", "Plotly"]}
+  projects={[
+    "Toronto Census Visualizer",
+    "Scarborough North Bike Share Research",
+    "Design and Research for TTCriders",
+  ]}
+  allProjects={projects}
+/>
+<PhotoArcSection
   number="01"
   title="Data"
   backgroundSvg={DataGradient}
