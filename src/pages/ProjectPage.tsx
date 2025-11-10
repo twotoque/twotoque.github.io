@@ -21,12 +21,16 @@ if (error) {
   console.log("Projects data:", data);
 }
 
+type Props = {
+  projectNum: number;
+};
 
-function ProjectPage() {
+function ProjectPage({ projectNum }: Props) {
   type CaseLink = {
     url: string;
     label: string;
   };
+  
   
   type ProjectDetails = {
     id: number;
@@ -120,6 +124,8 @@ function ProjectPage() {
   const [verticalFlow, setVerticalFlow] = useState<string[]>([]);
   const [competitors, setCompetitors] = useState<Competitor[]>([]);
   const [swatches, setSwatches] = useState<Swatch[]>([]);
+
+
 
 useEffect(() => {
   async function fetchProjectDetails() {

@@ -12,6 +12,8 @@ import ProjectCard from "../components/ProjectCard.tsx";
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { supabase } from '@/lib/supabaseClient';
+import ProjectArcSection from "../components/HomeSection";
+import DataGradient from "../assets/Gradient1.svg";
 
 /*
 const projects = [
@@ -133,6 +135,8 @@ interface Project {
 
 function App(){
   const [projects, setProjects] = useState<Project[]>([]);  
+
+
   useEffect(() => {
     const fetchProjects = async () => {
       const { data, error } = await supabase
@@ -204,6 +208,22 @@ function App(){
         ))}
       </div>
     </div>
+    
+
+<ProjectArcSection
+  number="01"
+  title="Data"
+  backgroundSvg={DataGradient}
+  tools={["Python", "Pandas", "Plotly"]}
+  projects={[
+    "Toronto Census Visualizer",
+    "Scarborough North Bike Share Research",
+    "Design and Research for TTCriders",
+    "YUlearn",
+  ]}
+  allProjects={projects}
+/>
+
     
   </div>
 }

@@ -11,7 +11,8 @@ function App() {
       <ScrollTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/transitbloom" element={<ProjectPage />} />
+        <Route path="/transitbloom" element={<ProjectPage projectNum={22} />} />
+        <Route path="/yulearn" element={<ProjectPage projectNum={27} />} />
       </Routes>
     </div>
   );
