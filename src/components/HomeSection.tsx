@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import { useMemo } from "react";
+import { useMemo, useRef  } from "react";
 
 interface Project {
   title: string;
@@ -45,23 +45,28 @@ export default function ProjectArcSection({
   const allTools = Array.from(
     new Set([...(tools || []), ...filtered.flatMap((p) => p.tools || [])])
   );
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"], 
+  });
+
+  const y = useTransform(scrollYProgress, [0, 0.9], ["0%", "80%"]);
 
   return (
     <section
+      ref={sectionRef}
       className="relative bg-cover bg-center py-24 overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundSvg})`,
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10"></div>
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10" />
 
       <div className="flex flex-col md:flex-row items-start justify-start textBody px-6 gap-8">
-        {/* Side info */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          style={{ y }}
           className="md:w-[30%] flex flex-col items-center md:items-start sticky top-24 md:top-36 self-start"
         >
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
@@ -83,15 +88,7 @@ export default function ProjectArcSection({
           )}
         </motion.div>
 
-        {/* Projects */}
-        <div
-          className="
-            flex flex-col w-full
-            sm:flex-row sm:flex-wrap sm:justify-start sm:gap-6
-            md:grid md:grid-cols-2 xl:grid-cols-3 md:w-full
-            min-h-full gap-8 overflow-visible
-          "
-        >
+        <div className="flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-6 md:grid md:grid-cols-2 2xl:grid-cols-3 min-h-full gap-8">
           {filtered.length > 0 ? (
             filtered.map((proj, idx) => (
               <motion.div
