@@ -38,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </h1>
 
         {description && (
-          <p className="pt-3 text-sm text-gray-700">{description}</p>
+          <p className="pt-3 text-sm text-sm text-gray-700">{description}</p>
         )}
 
         {tech_stack && (
