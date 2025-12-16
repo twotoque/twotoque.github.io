@@ -10,11 +10,11 @@ export default function PlotEmbed({
   height = 600
 }: PlotEmbedProps) {
   return (
-    <div className="w-full my-10" style={{ height }}>
+    <div className="w-full flex justify-center" style={{ height }}>
       <iframe
         src={src}
         title={title}
-        className="w-full h-full border-0 rounded-md"
+        className="block w-full h-full border-0"
         loading="lazy"
       />
     </div>

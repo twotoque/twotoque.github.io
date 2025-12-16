@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import CustomButton from "@/components/Button";
 import PlotEmbed from "@/components/PlotEmbed";
+import PlotWithInsights from "@/components/MultiPlotEmbed";
 
 export default function BU354() {
   // Static brand colour for BU354
@@ -85,8 +86,8 @@ export default function BU354() {
       </section>
       
 
-      {/* DESIGN PROMPT (same layout as your original project pages) */}
       <section style={{ background: colour }}>
+        
         <div className="pt-10 pb-10 headerBody !text-white">
           <h4 className="!font-light mt-0 mb-4">DESIGN PROMPT</h4>
           <h3 className="m-0">
@@ -95,7 +96,7 @@ export default function BU354() {
             tasks more intuitively than existing LMS tools?
           </h3>
         </div>
-        </section><section>
+        </section><section className="headerBody">
         <div>
           <h4 className="text-3xl mb-6 !font-light">PROJECT OVERVIEW</h4>
           <p className="leading-relaxed">
@@ -107,7 +108,6 @@ export default function BU354() {
             preferences, and dashboard ranking tests across 7 medium-fidelity prototypes.
           </p>
         </div>
-
         {/* PROBLEM + USER FLOW */}
         <div>
           <h4 className="text-3xl mb-6 !font-light">UNDERSTANDING THE PROBLEM</h4>
@@ -162,10 +162,41 @@ export default function BU354() {
           <p className="leading-relaxed">
             Statistical testing showed:
           </p>
-          <PlotEmbed
-  src="/html/dashboard_distribution.html"
+<PlotWithInsights
   title="Dashboard Distribution Plot"
+  plots={[
+    {
+      label: "All Dashboards",
+      src: "/html/dashboard_distribution.html"
+    },
+    {
+      label: "Dashboard A vs E",
+      src: "/html/comparison_A_vs_E.html"
+    },
+    {
+      label: "Dashboard A vs D",
+      src: "/html/comparison_A_vs_D.html"
+    },
+  ]}
+  insights={
+    <>
+      <p className="mb-3">
+        Dashboard A shows the strongest central tendency, with a lower median
+        ranking and reduced variance compared to other layouts.
+      </p>
+      <p className="mb-3">
+        While differences between A, D, and E were not statistically significant,
+        effect sizes consistently favored A—especially among students required
+        to take BU354.
+      </p>
+      <p>
+        This suggests that layout clarity and information hierarchy matter more
+        than minor stylistic differences at the mid-fidelity stage.
+      </p>
+    </>
+  }
 />
+
 
           <ul className="text-lg list-disc pl-6 space-y-2 mt-2">
             <li>Dashboard A consistently performed well across all groups</li>
