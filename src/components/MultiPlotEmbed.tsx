@@ -38,7 +38,6 @@ type PlotOption = {
 type PlotWithInsightsProps = {
   title: string;
   height?: number;
-  insights: React.ReactNode;
   plots: PlotOption[];
 };
 
