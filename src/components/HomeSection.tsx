@@ -88,7 +88,7 @@ export default function ProjectArcSection({
           )}
         </motion.div>
 
-        <div className="flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-6 md:grid md:grid-cols-2 2xl:grid-cols-3 min-h-full gap-8">
+      <div className="w-full columns-1 md:columns-2 2xl:columns-3 space-y-8">
           {filtered.length > 0 ? (
             filtered.map((proj, idx) => (
               <motion.div

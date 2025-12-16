@@ -369,6 +369,7 @@ function App(){
     "Toronto Census Visualizer",
     "Scarborough North Bike Share Research",
     "Design and Research for TTCriders",
+    "TransitBloom",
   ]}
   allProjects={projects}
 />

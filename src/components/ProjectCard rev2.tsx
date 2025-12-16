@@ -43,9 +43,11 @@ const ProjectCard2: React.FC<ProjectCardProps> = ({
         )}
 
         {case_study && (
-          <p className="bg-green-100 text-green-800 rounded-full px-4 py-2 text-center w-fit">
+            <div className="w-full flex justify-center">
+          <p style={{ fontSize: "0.875rem" }} className="bg-green-100 text-green-800 rounded-full px-4 py-2 text-center w-fit">
             In-depth case study available
           </p>
+          </div>
         )}
 
       </div>
