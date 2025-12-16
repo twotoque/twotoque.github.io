@@ -22,7 +22,7 @@ export default function BU354() {
           <div className="headerBody flex justify-center">
             <img
               className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
-              src="/images/bu354-hero.png"
+              src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543807/headshot/67/current"
               alt="BU354 Dashboard Hero"
             />
           </div>
@@ -113,10 +113,14 @@ export default function BU354() {
         <div>
           <h4 className="text-3xl mb-6 !font-light">UNDERSTANDING THE PROBLEM</h4>
   
+
+          <iframe width="100%" height="450" src="https://embed.figma.com/board/kVyoyjnmoFNbWv3JQy1JsO/Untitled?node-id=0-1&embed-host=share" ></iframe>
+
           <p className="leading-relaxed mb-6">
             BU354 contains multiple weekly group assignments stored in several Word documents.
             Some of these assignments contained questions that had to be repeated manually across
-            different files (e.g., “What is your group?”), .
+            different files (e.g., “What is your group?”). From this, a basic user flow for both the 
+            student and professor graders was mapped out to identify pages to make and areas of improvement.
           </p>
 
 
@@ -128,7 +132,7 @@ export default function BU354() {
             structures of familiar platforms like MyLearningSpace, Google Docs, Laurier Navigator,
             and other LMS systems. 
           </p>
-        </div>
+          </div>
 
         {/* SAMPLE SIZE */}
         <div>
@@ -139,7 +143,7 @@ export default function BU354() {
             The dataset contains feedback from:
           </p>
           
-          <ul className="list-disc text-lg pl-6 space-y-2">
+          <ul className="text-lg list-disc pl-6 space-y-2 mt-2">
             <li><b>31</b> sticky-note participants (qualitative notes)</li>
             <li><b>28</b> detailed survey respondents</li>
             <li><b>59+ total</b> participants contributing to the final results</li>
@@ -387,7 +391,7 @@ users would meaningfully notice the difference.
 
 <p className="leading-relaxed mb-2">
   <b>Null hypothesis (H₀):</b> All response categories are equally preferred
-  (students do not prefer one option over another).
+  (students do not prefer one option over another). By "rejecting" the null hypothesis, we think the alternate hypothesis is more likely. If we "fail to reject" the null hypothesis, we don't have enough evidence to support the alternate hypothesis.
 </p>
 <img
   src="/equations/nullhypo.svg"
@@ -397,7 +401,7 @@ users would meaningfully notice the difference.
 
 <p className="leading-relaxed mb-2">
   <b>Alternative hypothesis (H₁):</b> At least one category is preferred more or
-  less than expected under equal preference.
+  less than expected under equal preference. <i>This does <u>not</u> specify which category is better or worse.</i>
 </p>
 <img
   src="/equations/althypo.svg"
@@ -456,20 +460,115 @@ users would meaningfully notice the difference.
 </DropdownSection>
 
           <p className="leading-relaxed mb-4">
-            Navigation preferences were split. Surveys leaned slightly toward a top bar,
-            but sticky-note respondents leaned toward a collapsible sidebar—mirroring
-            Laurier Navigator’s structure.
+            Navigation preferences were split. Surveys leaned slightly toward a top bar, noting its similarities with MyLearningSpace. 
+            However, sticky-note respondents leaned toward a collapsible sidebar mirroring
+            Laurier Navigator’s user interface. 
           </p>
 
-          <p className="leading-relaxed">
-            Students frequently mentioned the need for:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Clear progress tracking</li>
-            <li>Better visibility of upcoming deadlines</li>
-            <li>Split hierarchy for content vs account settings</li>
-            <li>Inclusion of the Wilfrid Laurier University logo</li>
-          </ul>
+<ul className="list-disc text-lg pl-6 space-y-2 mt-2">
+  <li><em>“Side bar (A) is easiest to see all of the content”</em></li>
+  <li><em>“A looks like Navigator”</em></li>
+  <li><em>“Used a fixed top bar w/ progress tracker”</em></li>
+  <li><em>“A would be nice if the sidebar was collapsible”</em></li>
+  <li><em>“Favorite is A, then D. since easier to scroll side bar”</em></li>
+  <li><em>“Sidebar takes too much space”</em></li>
+  <li><em>“Never a fan of side bar, more intuitive if on top, so used to using top bar (MyLS, Docs)”</em></li>
+</ul>
+
+          <PlotWithInsights
+            title="Dashboard Distribution Plot"
+            plots={[
+              {
+                label: "Navigation Bar Graph",
+                src: "/html/navigation_preference_bar.html"
+              },
+              {
+                label: "Navigation Preference Distribution",
+                src: "/html/navigation_preference.html"
+              },
+            ]}
+          />
+
+
+
+<p className="leading-relaxed">
+  <b>Features wise,</b> users focused heavily on navigation clarity, visual
+  familiarity, and long-term flexibility. Feedback clustered around progress
+  visibility, institutional branding, and how the dashboard could scale beyond
+  a single course.
+</p>
+
+          <PlotWithInsights
+            title="Dashboard Distribution Plot"
+            plots={[
+              {
+                label: "Features Bar Graph",
+                src: "/html/platform_importance_bar.html"
+              },
+              
+            ]}
+          />
+
+
+    <p className="leading-relaxed">
+      <b>Progress tracking & navigation.</b> Users liked the inclution of a progress
+      tracker to help them monitor assignment completion. Some raised
+      concerns about added complexity and potential confusion, highlighting the
+      need for a clear and lightweight implementation.
+    </p>
+
+    <ul className="list-disc text-lg pl-6 space-y-2 mt-2">
+      <li><em>“Used a fixed top bar w/ progress tracker”</em></li>
+      <li><em>“Progress bar → Easy to navigate”</em></li>
+      <li><em>“Progress bar, would rather see it on top”</em></li>
+      <li><em>“We need the progress tracking”</em></li>
+      <li><em>“Weigh importance vs complexity of progress tracker”</em></li>
+      <li><em>“Progress Bar is confusing”</em></li>
+    </ul>
+
+    <p className="leading-relaxed">
+      <b>Wilfrid Laurier University branding (WLU).</b> The Wilfrid Laurier University logo was
+      widely seen as an element to make the platform official. Even when users
+      expressed dislike for specific dashboard variants, the presence of
+      Laurier branding increased perceived legitimacy and familiarity.
+    </p>
+
+    <ul className="list-disc text-lg pl-6 space-y-2 mt-2">
+      <li><em>“Keep WLU logo in final design”</em></li>
+      <li><em>“D + E: use WLU logo”</em></li>
+      <li><em>“Top bar is better, Laurier logo is [good], top font is good”</em></li>
+      <li><em>“WLU logo is trivial to the school”</em></li>
+      <li><em>“Doesn’t like E but likes the Laurier Logo”</em></li>
+    </ul>
+
+    <p className="leading-relaxed">
+      <b>Account hierarchy.</b> Separating account-related actions from course
+      content helped users distinguish personal settings from academic
+      tasks, resulting in a cleaner information hierarchy.
+    </p>
+
+    <ul className="list-disc text-lg pl-6 space-y-2 mt-2">
+      <li><em>“E: my account separate”</em></li>
+      <li><em>“Likes how my account is separate”</em></li>
+    </ul>
+
+    <p className="leading-relaxed">
+      <b>Scalability beyond a single course.</b> Some users questioned the
+      dashboard’s focus on a single course, suggesting that the design felt
+      robust enough to support broader academic use across multiple courses or
+      programs. The dashboard can be adapted to accommodate various sections and other BU courses, akin to how the Department 
+      of Physics and Computer Science manages multiple courses within their bohr.wlu.ca platform.
+    </p>
+
+    <ul className="list-disc text-lg pl-6 space-y-2 mt-2">
+      <li>
+        <em>
+          “Confused on why we are building this platform solely for one course”
+        </em>
+      </li>
+    </ul>
+
+
         </div>
 
         {/* FINAL RECOMMENDATIONS */}
@@ -477,12 +576,30 @@ users would meaningfully notice the difference.
           <h4 className="text-3xl mb-6 !font-light">FINAL DESIGN RECOMMENDATIONS</h4>
 
           <p className="leading-relaxed">
-            Based on the combined results of surveys, sticky-note sessions, and A/B
+            Based on the combined results of surveys, sticky-note sessions, and medium-fidelity
             testing, the final recommendations for BU354 include:
           </p>
+          <ul className="text-lg list-disc pl-6 space-y-2 mt-2">
+          <li>
+            A collapsible sidebar with the Wilfrid Laurier University logo, with user interface elements similar to MyLearningSpace, Google Docs, &amp; Laurier Navigator
+          </li>
+          <li>Usage of the purple primary colour scheme</li>
+          <li>Upcoming deadlines must be present in the home dashboard</li>
+          <li>
+            Dashboard A will be adapted due to the preference by students who will need to take BU354
+          </li>
+        </ul>
+
 
         </div>
-      </section>
+
+          <h4 className="text-3xl mb-6 !font-light">HIGH-FIDELITY PROTOTYPES</h4>
+
+          <p className="leading-relaxed">
+            Based on the recommendations, we built high-fidelity prototypes including more than 12+ userflows based on dashboard A. 
+          </p>
+          <iframe width="100%" height="800" src="https://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share" ></iframe>
+           </section>
 
       {/* ----------------------------- */}
       {/* SECTION 2 — DEV WORK (empty) */}
