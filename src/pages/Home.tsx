@@ -5,16 +5,17 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import GOtrain from "../components/train.tsx";
+import GOtrain from "../components/train";
 import GrainGrass from "../assets/GrainGrass.svg";
 import CNTower from "../assets/CNTower.svg";
-import ProjectCard from "../components/ProjectCard.tsx";
+import ProjectCard from "../components/ProjectCard";
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { supabase } from '@/lib/supabaseClient';
 import ProjectArcSection from "../components/HomeSection";
 import DataGradient from "../assets/Gradient1.svg";
 import PhotoArcSection from "../components/HomeSectionPhotos"
+import LogoTitle from "../components/Role";
 /*
 const projects = [
   {
@@ -192,6 +193,152 @@ function App(){
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
        I’m also doing a Computer Science degree at <b>Wilfrid Laurier University</b> with a minor of UX Design and North American Studies.
       </motion.p>
+      <div className="flex flex-col gap-3">
+      <LogoTitle
+        logoSrc="./logos/city_of_toronto_logo.jpeg"
+        title="Council Administrative Assistant (Communications)"
+        subtitle="Toronto City Council, Ward 23 Scarborough North"
+        dateJob="April 2024 - present"
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+            <li>
+              Designed 130+ event, newsletter, and policy graphics using Adobe Illustrator,
+              Photoshop, and InDesign in English, Tamil, and Chinese, with materials reaching
+              30,000+ households and increasing community engagement by 20% for City Councillor
+              and TTC Chair Jamaal Myers
+            </li>
+            <li>
+              Conducted interviews with 15+ residents, surveyed 55+ individuals, and analyzed
+              UX-focused bike usage data using Python, Pandas, Plotly, Dash, and JSON
+            </li>
+            <li>
+              Optimized data retrieval through caching and efficient API usage in an interactive
+              map dashboard built with React, TypeScript, Flask, Firebase, and the Toronto Open
+              Data API to present events and datasets
+            </li>
+            <li>
+              Captured and edited 1,200+ photos using a DSLR and Adobe Lightroom
+            </li>
+            <li>
+              Assisted in planning, brand development, and marketing major community events,
+              including a 1,000+ attendee community barbecue and a holiday market involving
+              200+ guests and 15+ sponsors
+            </li>
+            <li>Worked and researched on policy briefs and constituency issues, including transportation and local road parking 
+            </li>
+            <li>Recruited 30+ volunteers for our events 
+            </li>
+            <li>Entered data for more than 1000+ residents using Microsoft Excel and ForeAction
+            </li>
+          </ul>
+
+          </div>
+        }
+      />
+
+
+           <LogoTitle
+        logoSrc="./logos/laz_logo.jpeg"
+        title="Product Designer and Software Developer, Laurier StartUp Lab"
+        subtitle="Lazaridis School of Business & Economics at Wilfrid Laurier University"
+        dateJob="September 2025 - December 2025"
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+            <li>
+              Developed an interactive park route finder using Dijkstra’s algorithm, Turf.js, and Leaflet for shortest-path navigation. Built with React, TypeScript, and PostgreSQL, with geospatial data processed in QGIS for efficient rendering and maintenance.
+            </li>
+            <li>
+              Automated web-to-LaTeX pipeline with Python (BeautifulSoup), handling references, images, and formatting for structured reports.
+            </li>
+            <li>
+              Led a brand refresh for Our Greenway, redesigning the visual identity, improving accessibility (WCAG 2.1), and conducting a heuristic evaluation using Nielsen’s principles to address UX issues.
+            </li>
+            <li>
+              Captured and edited 1,200+ photos using a DSLR and Adobe Lightroom
+            </li>
+            <li>
+              Created a comprehensive brand guideline system and developed a component development kit for the website, including reusable HTML/CSS UI elements for NationBuilder
+            </li>
+          </ul>
+
+          </div>
+        }
+      />
+
+           <LogoTitle
+        logoSrc="./logos/ourgreenway_logo.jpeg"
+        title="Software Developer and Data Analyst"
+        subtitle="Our Greenway Conservancy"
+        dateJob="April 2025 - September 2025"
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+            <li>
+              Developed an interactive park route finder using Dijkstra’s algorithm, Turf.js, and Leaflet for shortest-path navigation. Built with React, TypeScript, and PostgreSQL, with geospatial data processed in QGIS for efficient rendering and maintenance.
+            </li>
+            <li>
+              Automated web-to-LaTeX pipeline with Python (BeautifulSoup), handling references, images, and formatting for structured reports.
+            </li>
+            <li>
+              Led a brand refresh for Our Greenway, redesigning the visual identity, improving accessibility (WCAG 2.1), and conducting a heuristic evaluation using Nielsen’s principles to address UX issues.
+            </li>
+            <li>
+              Captured and edited 1,200+ photos using a DSLR and Adobe Lightroom
+            </li>
+            <li>
+              Created a comprehensive brand guideline system and developed a component development kit for the website, including reusable HTML/CSS UI elements for NationBuilder
+            </li>
+          </ul>
+
+          </div>
+        }
+        
+      />
+
+      <LogoTitle
+        logoSrc="./logos/ttcriders-logo.png"
+        title="Community Planner"
+        subtitle="TTCriders"
+        dateJob="May 2022 - September 2023"
+      />
+      <LogoTitle
+        logoSrc="./logos/aco_logo.jpeg"
+        title="Video Editor"
+        subtitle="Architectural Conservancy Ontario"
+        dateJob="September 2021 - November 2021"
+      />
+
+    </div>
+
+      <hr className="my-4"></hr>
+
+      <LogoTitle
+        logoSrc="./logos/wlu_logo.webp"
+        title="Bachelor of Science, Computer Science"
+        subtitle="Wilfrid Laurier University"
+        dateJob="September 2023 - Present"
+        
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+            <li>
+              Minor: UX Design and North American Studies
+            </li>
+            <li>
+              Relevant topics: Data Structures, Databases, Discrete Mathematics, Agile Design, Linear Algebra, Tree/Graph Theory, Combinatorics, Operating Systems, Digital Electronics, Statistical Hypothesis Testing
+            </li>
+            <li>
+              Faculty of Science Dean's List, 2024
+            </li>
+            <li>
+              Clubs: UX Laurier, Chinese Student Association, Rereational Dance Team,  Intramural Ultimate Frisbee, Volleyball, Softball
+            </li>
+          </ul>
+          </div>
+          }
+      />
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
        This page is a work-in-progress and is being be updated to include my portfolio. In the meantime, welcome :)
       </motion.p>
@@ -200,7 +347,10 @@ function App(){
       </motion.h5>
 
       
-      <div className="flex flex-wrap gap-6 items-start">
+      
+    </div>
+{/*
+<div className="flex flex-wrap gap-6 items-start">
         {projects.map((proj, idx) => (
           <a key={idx} href={proj.link} className="!no-underline">
             <ProjectCard {...proj} />
@@ -208,8 +358,7 @@ function App(){
         ))}
         
       </div>
-    </div>
-
+*/}
 <ProjectArcSection
   number="01"
   title="Data"
