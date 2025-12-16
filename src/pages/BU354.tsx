@@ -96,7 +96,7 @@ export default function BU354() {
         </div>
         </section><section>
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Project Overview</h2>
+          <h4 className="text-3xl mb-6 !font-light">PROJECT OVERVIEW</h4>
           <p className="leading-relaxed">
             The BU354 Dashboard was created for <b>Human Resources Management</b> at the
             Lazaridis School of Business & Economics. Over the Fall 2025 term,
@@ -109,7 +109,7 @@ export default function BU354() {
 
         {/* PROBLEM + USER FLOW */}
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Understanding the Problem</h2>
+          <h4 className="text-3xl mb-6 !font-light">UNDERSTANDING THE PROBLEM</h4>
           <p className="leading-relaxed mb-6">
             Students reported that MyLearningSpace lacked clarity around deadlines,
             assignment status, and navigation flow. The BU354 team needed a custom
@@ -126,7 +126,7 @@ export default function BU354() {
 
         {/* SAMPLE SIZE */}
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Research & Data Collection</h2>
+          <h4 className="text-3xl mb-6 !font-light">RESEARCH & DATA COLLECTION</h4>
 
           <p className="leading-relaxed mb-4">
             The dataset contains feedback from:
@@ -146,7 +146,7 @@ export default function BU354() {
 
         {/* MID-FI TESTING */}
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Medium-Fidelity Prototype Testing</h2>
+          <h4 className="text-3xl mb-6 !font-light">MEDIUM-FIDELITY PROTOTYPE TESTING</h4>
           <p className="leading-relaxed mb-6">
             Six variants (Dashboards A–F) were tested using ranking surveys.
             Students rated each dashboard from <b>1 (most liked)</b> to <b>6 (least liked)</b>.
@@ -171,7 +171,7 @@ export default function BU354() {
 
         {/* COLOUR + FEATURES */}
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Colour Scheme & Navigation Preferences</h2>
+          <h4 className="text-3xl mb-6 !font-light">COLOUR SCHEME & NAVIGATION PREFERENCES</h4>
 
           <p className="leading-relaxed mb-4">
             A/B testing was conducted on Laurier-branded colour palettes, comparing
@@ -198,7 +198,7 @@ export default function BU354() {
 
         {/* FINAL RECOMMENDATIONS */}
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Final Design Recommendations</h2>
+          <h4 className="text-3xl mb-6 !font-light">FINAL DESIGN RECOMMENDATIONS</h4>
 
           <p className="leading-relaxed">
             Based on the combined results of surveys, sticky-note sessions, and A/B
