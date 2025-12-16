@@ -3,10 +3,10 @@ import CustomButton from "@/components/Button";
 import PlotEmbed from "@/components/PlotEmbed";
 import PlotWithInsights from "@/components/MultiPlotEmbed";
 import DropdownSection from "@/components/Dropdown";
-
+import LogoTitle from "@/components/Role";
 export default function BU354() {
   // Static brand colour for BU354
-  const colour = "#4E2A84";
+  const colour = "#362559";
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function BU354() {
           <div className="headerBody flex justify-center">
             <img
               className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
-              src="https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/543807/headshot/67/current"
+              src="/projects/bu354/image 9.png"
               alt="BU354 Dashboard Hero"
             />
           </div>
@@ -108,6 +108,19 @@ export default function BU354() {
             design recommendations, including colour theme evaluations, navigation
             preferences, and dashboard ranking tests across 7 medium-fidelity prototypes.
           </p>
+
+        <a
+          href="#"
+          className="overflow-hidden no-underline inline-block border border-black rounded-full px-4 py-2 text-lg font-normal text-black hover:text-white hover:font-bold hover:bg-black transition hover:scale-105"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("development")?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          <p className="m-0">Skip to Full-Stack Development</p>
+        </a>
+
+
         </div>
         {/* PROBLEM + USER FLOW */}
         <div>
@@ -527,7 +540,7 @@ users would meaningfully notice the difference.
     </ul>
 
     <p className="leading-relaxed">
-      <b>Wilfrid Laurier University branding (WLU).</b> The Wilfrid Laurier University logo was
+      <b>Wilfrid Laurier University branding.</b> The Wilfrid Laurier University logo was
       widely seen as an element to make the platform official. Even when users
       expressed dislike for specific dashboard variants, the presence of
       Laurier branding increased perceived legitimacy and familiarity.
@@ -599,14 +612,141 @@ users would meaningfully notice the difference.
             Based on the recommendations, we built high-fidelity prototypes including more than 12+ userflows based on dashboard A. 
           </p>
           <iframe width="100%" height="800" src="https://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share" ></iframe>
+          
            </section>
 
       {/* ----------------------------- */}
       {/* SECTION 2 — DEV WORK (empty) */}
       {/* ----------------------------- */}
 
-      <section className="headerBody py-20">
+      <section className="headerBody py-20 !pb-0 o" id="development">
         {/* left empty intentionally */}
+         <h4 className="text-3xl mb-6 !font-light">FULL-STACK DEVELOPMENT</h4>
+
+        <p>
+          The BU354 platform was developed as a modular, production-oriented system
+          designed to support iterative UX testing while remaining scalable for future
+          course offerings. The frontend was built using React and Next.js with a
+          component-based architecture, allowing individual dashboard elements such as
+          task summaries, deadlines, and progress indicators to be developed and refined
+          independently as research insights emerged.
+        </p>
+
+        <p>
+          On the backend, Prisma was used as the ORM to model and query relational data
+          in a predictable and type-safe manner, supporting maintainability as the
+          platform evolved. Authentication and session management were handled using
+          BetterAuth, enabling secure role-based access while keeping the authentication
+          layer seperate from other logic. 
+        </p>
+
+        <p>
+          At a systems level, the platform was built around a clear separation between
+          the frontend interface and backend services. API interactions were structured
+          around well-defined, resource-based endpoints following RESTful and CRUD principles. 
+        </p>
+
+        <p>
+          Throughout development, best practices were followed to maintain structure,
+          scalability, and alignment with stakeholder goals. Linear was used for task
+          tracking, issue management, and milestone planning, allowing work to be
+          organized into short development sprints with clear priorities. Regular
+          check-ins and feedback loops ensured that design decisions, technical
+          implementation, and client expectations remained aligned throughout the
+          process.
+        </p>
+
+         <h4 className="text-3xl mb-6 !font-light">TECH STACK</h4>
+
+      <div className="flex flex-col gap-3">
+        
+      <LogoTitle
+        logoSrc="./tech/typescript.svg"
+        title="TypeScript"
+        subtitle="Front and Backend Programming Language"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/react.svg"
+        title="React"
+        subtitle="Frontend"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/betterauth.png"
+        title="BetterAuth"
+        subtitle="Authentication"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/prisma.jpg"
+        title="Prisma"
+        subtitle="Object-Relational Mapping"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/supabase.jpg"
+        title="Supabase"
+        subtitle="Database"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/postgresql.svg"
+        title="PostgreSQL"
+        subtitle="Database Language"
+        ></LogoTitle>
+        </div>
+
+        <h4 className="text-3xl mb-6 !font-light">HOW IT LOOKS</h4>
+        
+
+        <div style={{ background: colour }}>
+          <div className="headerBody flex justify-center">
+            <img
+              className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
+              src="/projects/bu354/image 8.png"
+              alt="BU354 Dashboard Hero"
+            />
+          </div>
+        </div>
+
+        <p className="pb-10">
+          Student doing an assignment.
+        </p>
+        <div style={{ background: colour }}>
+          <div className="headerBody flex justify-center">
+            <img
+              className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
+              src="/projects/bu354/image 9.png"
+              alt="BU354 Dashboard Hero"
+            />
+          </div>
+        </div>
+
+        <p className="pb-10">
+          Student seeing a graded assignment.
+        </p>
+        <div style={{ background: colour }}>
+          <div className="headerBody flex justify-center">
+            <img
+              className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
+              src="/projects/bu354/image 7.png"
+              alt="BU354 Dashboard Hero"
+            />
+          </div>
+        </div>
+
+        <p className="pb-10">
+          Student seeing the grades page.
+        </p>
+        <div style={{ background: colour }}>
+          <div className="headerBody flex justify-center">
+            <img
+              className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
+              src="/projects/bu354/image 10.png"
+              alt="BU354 Dashboard Hero"
+            />
+          </div>
+        </div>
+
+        <p className="pb-10">
+          Student home page.
+        </p>
       </section>
     </>
   );
