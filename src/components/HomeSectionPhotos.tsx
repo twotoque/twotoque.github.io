@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import PhotoCard from "./PhotoCard";
+import ProjectCard from "./ProjectCard";
 import { useMemo, useRef  } from "react";
-
+import ProjectCard2 from "@/components/ProjectImage rev2";
 interface Project {
   title: string;
   image: string;
@@ -23,7 +23,7 @@ interface ProjectArcSectionProps {
   tools?: string[];
 }
 
-export default function PhotoArcSection({
+export default function ProjectArcImageSection({
   number,
   title,
   projects,
@@ -56,10 +56,12 @@ export default function PhotoArcSection({
   return (
     <section
       ref={sectionRef}
-      className="relative bg-cover bg-center py-24 overflow-hidden"
+      className="relative bg-cover bg-center py-40 md:py-24 w-full h-full object-fill "
+
       style={{
         backgroundImage: `url(${backgroundSvg})`,
         backgroundRepeat: "no-repeat",
+        
       }}
     >
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10" />
@@ -67,8 +69,8 @@ export default function PhotoArcSection({
       <div className="flex flex-col md:flex-row items-start justify-start textBody px-6 gap-8">
         <motion.div
           style={{ y }}
-          className="md:w-[30%] flex flex-col items-center md:items-start sticky top-24 md:top-36 self-start"
-        >
+          className="md:w-[30%] flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
+>
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
             {number} / <br />
             <span className="not-italic font-bold text-gray-900">{title}</span>
@@ -76,7 +78,10 @@ export default function PhotoArcSection({
 
           {allTools.length > 0 && (
             <div className="w-full flex flex-col">
-              <p className="p-0 font-semibold text-gray-800 mb-2">Tools</p>
+             <p className="p-0 font-semibold text-gray-800 mb-2 text-center md:text-left">
+  Tools
+</p>
+
               <ul className="pl-2 mt-0 mb-0 overflow-y-auto space-y-2 list-disc list-inside scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
                 {allTools.map((tool, idx) => (
                   <li key={idx} className="text-gray-700 text-lg">
@@ -88,7 +93,7 @@ export default function PhotoArcSection({
           )}
         </motion.div>
 
-        <div className="flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-6 md:grid md:grid-cols-2 2xl:grid-cols-3 min-h-full gap-8">
+      <div className="w-full columns-1 md:columns-2 2xl:columns-3 space-y-8">
           {filtered.length > 0 ? (
             filtered.map((proj, idx) => (
               <motion.div
@@ -99,7 +104,7 @@ export default function PhotoArcSection({
                 className="w-full sm:w-auto"
               >
                 <a href={proj.link} className="!no-underline">
-                  <PhotoCard {...proj} />
+                  <ProjectCard2 {...proj} />
                 </a>
               </motion.div>
             ))

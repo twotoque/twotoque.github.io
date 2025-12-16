@@ -17,6 +17,7 @@ import DataGradient from "../assets/Gradient1.svg";
 import PhotoArcSection from "../components/HomeSectionPhotos"
 import LogoTitle from "../components/Role";
 import ProjectCard2 from "@/components/ProjectCard rev2";
+import ProjectArcImageSection from "../components/HomeSectionPhotos";
 /*
 const projects = [
   {
@@ -184,9 +185,9 @@ function App(){
     
       
       
-    <div className="textBody"> 
+    <div className="textBody !mb-0"> 
       <motion.h1 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-        experience
+        Experience
       </motion.h1>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
         I’m currently working at the <b>City of Toronto</b> as an Graphics Commuications Assistant for Ward 23 Scarborough North, handling graphic design, leading a biking UX project, and helping with digital communications & data visualization.
@@ -362,9 +363,8 @@ function App(){
 */}
 <ProjectArcSection
   number="01"
-  title="Data"
+  title="Data & Product"
   backgroundSvg={DataGradient}
-  tools={["Python", "Pandas", "Plotly"]}
   projects={[
     "Toronto Census Visualizer",
     "Scarborough North Bike Share Research",
@@ -373,7 +373,7 @@ function App(){
   ]}
   allProjects={projects}
 />
-<PhotoArcSection
+<ProjectArcImageSection
   number="01"
   title="Data"
   backgroundSvg={DataGradient}

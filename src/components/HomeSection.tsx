@@ -56,10 +56,12 @@ export default function ProjectArcSection({
   return (
     <section
       ref={sectionRef}
-      className="relative bg-cover bg-center py-24 overflow-hidden"
+      className="relative bg-cover bg-center py-40 md:py-24 w-full h-full object-fill "
+
       style={{
         backgroundImage: `url(${backgroundSvg})`,
         backgroundRepeat: "no-repeat",
+        
       }}
     >
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10" />
@@ -67,8 +69,8 @@ export default function ProjectArcSection({
       <div className="flex flex-col md:flex-row items-start justify-start textBody px-6 gap-8">
         <motion.div
           style={{ y }}
-          className="md:w-[30%] flex flex-col items-center md:items-start sticky top-24 md:top-36 self-start"
-        >
+          className="md:w-[30%] flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
+>
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
             {number} / <br />
             <span className="not-italic font-bold text-gray-900">{title}</span>
@@ -76,7 +78,10 @@ export default function ProjectArcSection({
 
           {allTools.length > 0 && (
             <div className="w-full flex flex-col">
-              <p className="p-0 font-semibold text-gray-800 mb-2">Tools</p>
+             <p className="p-0 font-semibold text-gray-800 mb-2 text-center md:text-left">
+  Tools
+</p>
+
               <ul className="pl-2 mt-0 mb-0 overflow-y-auto space-y-2 list-disc list-inside scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
                 {allTools.map((tool, idx) => (
                   <li key={idx} className="text-gray-700 text-lg">
