@@ -31,7 +31,7 @@ export default function BU354() {
         {/* PROJECT OVERVIEW MASTER (same structure as ProjectPage) */}
         <div className="headerBody">
           <h4 className="mb-0">Product Design & Full-Stack Development</h4>
-          <h1 className="mt-0 mb-10">BU354 Dashboard</h1>
+          <h1 className="mt-0 mb-10">BU354 Assignment Website</h1>
 
           <div className="flex flex-col md:flex-row gap-8">
             {/* LEFT COLUMN — OVERVIEW */}
