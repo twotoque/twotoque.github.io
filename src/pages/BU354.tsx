@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import CustomButton from "@/components/Button";
+import PlotEmbed from "@/components/PlotEmbed";
 
 export default function BU354() {
   // Static brand colour for BU354
@@ -110,11 +111,14 @@ export default function BU354() {
         {/* PROBLEM + USER FLOW */}
         <div>
           <h4 className="text-3xl mb-6 !font-light">UNDERSTANDING THE PROBLEM</h4>
+  
           <p className="leading-relaxed mb-6">
-            Students reported that MyLearningSpace lacked clarity around deadlines,
-            assignment status, and navigation flow. The BU354 team needed a custom
-            dashboard that was intuitive, brand-aligned, and capable of supporting
-            weekly assignment workflows.
+            BU354 contains multiple weekly group assignments stored in several Word documents.
+            Some of these assignments contained questions that had to be repeated manually across
+            different files (e.g., “What is your group?”).
+            Students reported difficulty tracking these
+            deadlines and navigating the existing LMS interface, leading to
+            missed submissions and increased stress.
           </p>
           <p className="leading-relaxed">
             Early exploration included mapping typical weekly flows from the
@@ -131,7 +135,8 @@ export default function BU354() {
           <p className="leading-relaxed mb-4">
             The dataset contains feedback from:
           </p>
-          <ul className="list-disc pl-6 space-y-2">
+          
+          <ul className="list-disc text-lg pl-6 space-y-2">
             <li><b>31</b> sticky-note participants (qualitative notes)</li>
             <li><b>28</b> detailed survey respondents</li>
             <li><b>59+ total</b> participants contributing to the final results</li>
@@ -157,7 +162,12 @@ export default function BU354() {
           <p className="leading-relaxed">
             Statistical testing showed:
           </p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
+          <PlotEmbed
+  src="/html/dashboard_distribution.html"
+  title="Dashboard Distribution Plot"
+/>
+
+          <ul className="text-lg list-disc pl-6 space-y-2 mt-2">
             <li>Dashboard A consistently performed well across all groups</li>
             <li>Small effect sizes (Cohen’s d ≈ −0.21 and −0.12)</li>
             <li>No statistically reliable difference between A and D/E</li>
