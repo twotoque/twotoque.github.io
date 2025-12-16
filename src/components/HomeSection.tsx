@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import { useMemo, useRef  } from "react";
-
+import ProjectCard2 from "@/components/ProjectCard rev2";
 interface Project {
   title: string;
   image: string;
@@ -99,7 +99,7 @@ export default function ProjectArcSection({
                 className="w-full sm:w-auto"
               >
                 <a href={proj.link} className="!no-underline">
-                  <ProjectCard {...proj} />
+                  <ProjectCard2 {...proj} />
                 </a>
               </motion.div>
             ))

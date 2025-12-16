@@ -16,6 +16,7 @@ import ProjectArcSection from "../components/HomeSection";
 import DataGradient from "../assets/Gradient1.svg";
 import PhotoArcSection from "../components/HomeSectionPhotos"
 import LogoTitle from "../components/Role";
+import ProjectCard2 from "@/components/ProjectCard rev2";
 /*
 const projects = [
   {
