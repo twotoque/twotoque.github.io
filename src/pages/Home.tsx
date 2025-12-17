@@ -1,7 +1,7 @@
 import "../App.css";
 import "../index.css";
 import "../components/train.tsx";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -17,112 +17,15 @@ import PhotoArcSection from "../components/HomeSectionPhotos"
 import LogoTitle from "../components/Role";
 import ProjectCard2 from "@/components/ProjectCard rev2";
 import ProjectArcImageSection from "../components/HomeSectionPhotos";
-/*
-const projects = [
-  {
-    image: "/projects/census/thumbnail.gif",
-    title: "Toronto Census Visualizer",
-    description:
-      "A visualization of Census 2021 data relative to all of Toronto's neighbourhoods.",
-    tech_stack: "Built with Python, Plotly, Pandas, and Dash",
-    type: "Data Visualization",
-    year: "2024",
-    link: "https://torontocensusvisualizer.com/",
-  },
-  {
-    image: "/projects/decay/thumbnail.gif",
-    title: "Atomic Search & Decay Calculator",
-    description: "Searches periodic table for elements and calculates alpha, beta positive, beta negative, and electron capture decays.",
-    tech_stack: "Built with JavaScript, JSON, HTML, and CSS.",
-    type: "Chrome Extension",
-    year: "2022 – 2024",
-    link: "https://chromewebstore.google.com/detail/atomic-search-decay-calcu/emcigdjdlalmbmoaadjfdmlghckpplng?hl=en&authuser=1",
-  },
-  {
-    image: "/projects/transitbloom/thumbnail.gif",
-    title: "TransitBloom",
-    description: "Gamifies and awards sustainable transit choices. Third place at UXL Blueprint Designation, 2024.",
-    tech_stack: "Built with Figma and Adobe Illustrator.",
-    type: "UX Design",
-    year: "2024",
-    link: "/transitbloom",
-    case_study: "1",
-  },
-  {
-    image: "/projects/cityoftorontoevent/thumbnail.gif",
-    title: "Scarborough North Event Map",
-    description: "(In development) A map which shows community, city, councillor, and library events, alongside live road closures.",
-    tech_stack: "Built using React, TypeScript, Python, Firebase, Flask. Some data sourced from Toronto Open Data API.",
-    type: "Development",
-    year: "2025-present",
-    link: "",
-  },
-  {
-    image: "/projects/bikeshare/thumbnail.png",
-    title: "Scarborough North Bike Share Research",
-    description: "Researched, interviewed 15+ residents, and surveyed 55+ users on their thoughts on biking and the location of Bike Share Toronto stations in Ward 23 Scarborough North.",
-    tech_stack: "Data visualized with Python, Pandas, and Plotly.",
-    type: "UX Research",
-    year: "2024",
-    link: "https://github.com/twotoque/BikeShare-ScarboroughNorth",
-  },
-  {
-    image: "/projects/cityoftoronto/thumbnail.gif",
-    title: "Posters & Flyers for the City of Toronto",
-    description: "Designed event and policy graphics (flyers, banners, posters, photos); several printed and distributed to 30,000+ households.",
-    tech_stack: "Designed with Adobe Illustrator, InDesign, Photoshop, Lightroom.",
-    type: "Print & Brand Design",
-    year: "2024 - present",
-    link: "",
-  },
-  {
-    image: "/projects/ttcriders/thumbnail.gif",
-    title: "Design and Research for TTCriders",
-    description: "Designed various graphics/videos, built webtools, and researched for TTCriders' Line 3 Scarborough and Wheel-Trans campaigns.",
-    tech_stack: "Designed with Adobe Illustrator, Photoshop, After Effects, Premiere Pro. Built tools using React, Next.js, JavaScript, and the Google Sheets API.",
-    type: "Design + UX Research",
-    year: "2021 - 2023",
-    link: "https://drive.google.com/file/d/1hArEtFNQ2tEwH5DwUuRf0j-CnXnU3hw3/view",
-  },
-  {
-    image: "/projects/yulearn/thumbnail.gif",
-    title: "YUlearn",
-    description: "An e-learning concept that explains computer science concepts to undergraduate students. Third place at York University Lassonde BEST Hackathon 2025.",
-    tech_stack: "Built with React, TypeScript, PostgreSQL, Next.js. Data for business pitch built with Python and Plotly. Designed in Figma.",
-    type: "Development",
-    year: "2025",
-    link: "https://docs.google.com/presentation/d/1mmPml3bYViGwdKy1LfTQjTGFgAUR1sMp8lleC3NClz8/edit?usp=sharing",
-  },
-  {
-    image: "/projects/globefm/thumbnail.gif",
-    title: "Globe.FM",
-    description: "An app that allows you to discover international artists and new songs. Best UI at UX Laurier Designathon 2025",
-    tech_stack: "Designed with Figma, Adobe After Effects, and Illustrator.",
-    type: "UI Design",
-    year: "2025",
-    link: "https://www.figma.com/proto/0pv2HFYgsvfYI7VYpPCXfr/UXL-Designathon-2025--Globe.FM?node-id=113-2801&p=f&t=MIgxPBNgKOrRkyCr-1&scaling=scale-down&content-scaling=fixed&page-id=61%3A627&starting-point-node-id=113%3A2801&show-proto-sidebar=1",
-  },
-  {
-    image: "/projects/aco/thumbnail.gif",
-    title: "Architectural Conservancy Ontario Heritage Awards",
-    description: "Storyboarded and edited 13 videos following ACO's brand guidelines for their heritage awards.",
-    tech_stack: "Edited using DaVinci Resolve, Fusion, and Google Earth Studio",
-    type: "Video Editing",
-    year: "2021",
-    link: "https://youtube.com/playlist?list=PLWjFwRWgg9K-bN6gWWZER7jYr5rZH1CJ7&si=I2boJVE6v1WiXwj5",
-  },
-  {
-    image: "/projects/lsps/thumbnail.png",
-    title: "Laurier STEM Publishing Society Website",
-    description: "Configured domain, DNS records, and backend infrastructure for a self-hosted WordPress site; optimized performance to handle 41,500+ requests and 2,250+ monthly visitors",
-    tech_stack: "Built with self-hosted WordPress, Cloudflare",
-    type: "Website Hosting, WordPress",
-    year: "2024",
-    link: "",
-  },
+import CustomButton from "@/components/Button";
+
+const SENTENCES = [
+  "building digital tools that help people understand market data",
+  "building digital tools that help people understand how the city works",
+  "building digital tools that help people navigate public services",
+  "building digital tools that help people make better decisions",
+  "building digital tools that translate machine learning results into usable insights",
 ];
-await supabase.from("projects").insert(projects);
-*/
 
 interface Project {
   title: string;
@@ -137,7 +40,14 @@ interface Project {
 
 function App(){
   const [projects, setProjects] = useState<Project[]>([]);  
+  const [index, setIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((i) => (i + 1) % SENTENCES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -161,11 +71,27 @@ function App(){
       hi i'm <b>Derek Song</b>
      </motion.h3>
       
-    <motion.h1 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.3 }} className="text-lg text-gray-800 max-w-2xl text-center">
-      ui/ux, graphic design, & full-stack developer
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+      className="text-4xl md:text-5xl font-semibold text-gray-900 max-w-3xl text-center leading-tight"
+    >
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={SENTENCES[index]}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.4 }}
+          className="block"
+        >
+          {SENTENCES[index]}
+        </motion.span>
+      </AnimatePresence>
     </motion.h1>
     <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-    also interested in urban planning, data visualization
+    with a focus on product design, data visualization, and urban systems.
     </motion.p>
     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5,  delay: 0.6 }} className="socialMedia text-lg text-gray-800 max-w-2xl text-center">
       <a href="https://www.linkedin.com/in/dereksong/">
@@ -189,11 +115,13 @@ function App(){
         Experience
       </motion.h1>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-        I’m currently working at the <b>City of Toronto</b> as an Graphics Commuications Assistant for Ward 23 Scarborough North, handling graphic design, leading a biking UX project, and helping with digital communications & data visualization.
-      </motion.p>
+        Hi! I'm a 3rd year Wilfrid Laurier University computer science student with a minor in user experience design. I'm interested in software development, UI/UX design, marketing, urban planning, public policy, and data analysis.       </motion.p>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       I’m also doing a Computer Science degree at <b>Wilfrid Laurier University</b> with a minor of UX Design and North American Studies.
-      </motion.p>
+       I currently work at <b>Toronto City Council (Ward 23 – Scarborough North)</b> as a Graphics Communications Assistant, contributing to event engagement and digital design using the Adobe suite, as well as data visualization work using Python. I also support founders at Wilfrid Laurier University’s Start-Up Lab through software development and Figma prototyping.
+       </motion.p>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
+       In my free time, I enjoy dancing, going to the gym, running, and playing volleyball. I also enjoy listening to musicals <span className="text-sm">(favourites are <i>In the Heights</i>, <i>The Great Gatsby</i>, <i>Come From Away</i>, and <i>Hamilton</i>)</span>, hip-hop, pop, and R&B <span className="text-sm">(favourites are Bruno Mars, SZA, and KATSEYE)</span>.
+       </motion.p>
       <div className="flex flex-col gap-3">
       <LogoTitle
         logoSrc="./logos/city_of_toronto_logo.jpeg"
@@ -247,21 +175,25 @@ function App(){
         dropdownContent={
           <div>
             <ul className="pl-5">
-            <li>
-              Developed an interactive park route finder using Dijkstra’s algorithm, Turf.js, and Leaflet for shortest-path navigation. Built with React, TypeScript, and PostgreSQL, with geospatial data processed in QGIS for efficient rendering and maintenance.
-            </li>
-            <li>
-              Automated web-to-LaTeX pipeline with Python (BeautifulSoup), handling references, images, and formatting for structured reports.
-            </li>
-            <li>
-              Led a brand refresh for Our Greenway, redesigning the visual identity, improving accessibility (WCAG 2.1), and conducting a heuristic evaluation using Nielsen’s principles to address UX issues.
-            </li>
-            <li>
-              Captured and edited 1,200+ photos using a DSLR and Adobe Lightroom
-            </li>
-            <li>
-              Created a comprehensive brand guideline system and developed a component development kit for the website, including reusable HTML/CSS UI elements for NationBuilder
-            </li>
+           <li>
+            Designed and tested high-fidelity Figma prototypes for the BU354 Human Resources Management dashboard; conducted statistical analyses (t-tests and chi-square tests); and built the platform’s backend using Prisma, BetterAuth, and Next.js to support secure authentication, robust data modeling, and scalable API development.
+          </li>
+
+          <li>
+            Developed and deployed the Winternship Job Portal, creating a Rank-Match algorithm and implementing CI/CD pipelines with a Next.js frontend and SQL/Supabase backend, supporting more than 110 total positions, 48% more unique jobs, 65% more employers, and onboarding 80+ students.
+          </li>
+
+          <li>
+            Built a real-time ingredient recognition system for a local Kitchener grocery store using TensorFlow, Keras, and Teachable Machine to classify food items and generate complementary product recommendations from a 20K+ transaction dataset.
+          </li>
+
+          <li>
+            Designed and prototyped 8+ user flows for Elara, a PowerBI timesheet and payment management app, emphasizing usability, accessibility, and a seamless end-to-end experience.
+          </li>
+
+          <li>
+            Collaborated with startup founders and professors to research user needs and design intuitive user flows, wireframes, and prototypes across Figma, React, and TypeScript.
+          </li>
           </ul>
 
           </div>
@@ -303,12 +235,67 @@ function App(){
         title="Community Planner"
         subtitle="TTCriders"
         dateJob="May 2022 - September 2023"
+
+         dropdownContent={
+          <div>
+            <ul className="pl-5">
+              <li>
+                Analyzed UX data from rider interviews and focus groups to research and design TTCriders’ Wheel-Trans “Family of Services” and Line 3 Scarborough closure report using Adobe InDesign.
+              </li>
+
+              <li>
+                 Built interactive tools to calculate time lost from the Line 3 Scarborough shutdown using user-submitted data, and visualized bus delay impacts with React, Next.js, Google Sheets API, HTML, CSS, and JavaScript.
+              </li>
+
+
+              <li>
+                Spoke with media organizations including CBC, CP24, Global News, and the Scarborough Mirror to communicate research findings and advocacy outcomes.
+              </li>
+
+              <li>
+                Used CallHub and NationBuilder to conduct community outreach, manage campaigns, and maintain the organization’s website.
+              </li>
+
+              <li>
+                Produced short-form videos and graphics using Adobe After Effects, Premiere Pro, and Illustrator, with several pieces surpassing 6,000+ views, 200+ engagements, and contributing to a 15% increase in web traffic.
+              </li>
+
+              <li>
+                Led workshops for newcomers on navigating public transit systems and engaging in transit advocacy.
+              </li>
+
+              <li>
+                Co-planned and coordinated a Youth Leadership Conference attended by approximately 20 aspiring changemakers.
+              </li>
+          </ul>
+
+          </div>
+        }
+
       />
       <LogoTitle
         logoSrc="./logos/aco_logo.jpeg"
         title="Video Editor"
         subtitle="Architectural Conservancy Ontario"
         dateJob="September 2021 - November 2021"
+         dropdownContent={
+          <div>
+            <ul className="pl-5">
+                <li>
+                  Storyboarded and produced 13 videos for the Architectural Conservancy Ontario’s 2021 Heritage Awards using Adobe After Effects, Premiere Pro, Photoshop, and Google Earth Studio.
+                </li>
+
+                <li>
+                  Followed Architectural Conservancy Ontario brand guidelines and colour schemes to ensure visual consistency across all deliverables.
+                </li>
+
+                <li>
+                  Collaborated with staff to create visually effective videos using maps, imagery, and keyframe animation.
+                </li>
+                
+            </ul>
+            </div>
+         }
       />
 
     </div>
@@ -340,11 +327,87 @@ function App(){
           </div>
           }
       />
+
+
+      <hr className="my-4"></hr>
+      <LogoTitle
+        logoSrc="./logos/code.svg"
+        title="Programming, Tools, and Frameworks"
+        subtitle=""
+        
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+              <li>Python (Pandas, Plotly, Dash, Flask, TensorFlow, Keras)</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React (Next.js, Vite, BetterAuth, Prisma)</li>
+              <li>C</li>
+              <li>SQL (PostgreSQL / Supabase)</li>
+              <li>HTML / CSS</li>
+              <li>ARM Assembly</li>
+              <li>JSON</li>
+              <li>R</li>
+              <li>Visual Basic / VBA</li>
+            </ul>
+          </div>
+          }
+      />
+      <LogoTitle
+        logoSrc="./logos/design.svg"
+        title="Design Tools"
+        subtitle=""
+        
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+              <li>Figma</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Lightroom / Photography</li>
+                <li>After Effects</li>
+                <li>Premiere Pro</li>
+                <li>Acrobat Pro</li>
+                <li>InDesign</li>
+                <li>Procreate</li>
+                <li>Canva</li>
+                <li>DaVinci Resolve / Fusion</li>
+            </ul>
+          </div>
+          }
+      />
+
+
+      <LogoTitle
+        logoSrc="./logos/other.svg"
+        title="Other Tools"
+        subtitle=""
+        
+        dropdownContent={
+          <div>
+            <ul className="pl-5"> 
+              <li>Cloudflare DNS</li>
+              <li>Docker</li>
+              <li>Vercel</li>
+              <li>Railway</li>
+              <li>Firebase</li>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>QGIS</li>
+              <li>WordPress</li>
+            </ul>
+          </div>
+          }
+      />
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       This page is a work-in-progress and is being be updated to include my portfolio. In the meantime, welcome :)
-      </motion.p>
+       <CustomButton
+       href="/resume"
+        label="View Resume"
+        />
+        </motion.p>
       <motion.h5 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       Last updated: June 2, 2025
+       Last updated: December 17, 2025
       </motion.h5>
 
       
@@ -368,26 +431,18 @@ function App(){
     "BU354 Assignment Platform",
     "Toronto Census Visualizer",
     "PlateMate",
+    "Wheel-Trans TTCriders Accessibility Report",
     "Scarborough North Bike Share Research",
+    "FlightPath Downsview",
     "Scarborough North Event Map",
-    "FlightPath Downsview"
+    "Keep Scarborough Connected TTCriders Report",
   ]}
   allProjects={projects}
 />
+
 <ProjectArcSection
   number="02"
-  title="UX Design"
-  backgroundSvg="/projects/Gradient 1.png"
-  projects={[
-    "TransitBloom",
-    "Globe.FM",
-    "Our Greenway Website Redesign"
-  ]}
-  allProjects={projects}
-/>
-<ProjectArcSection
-  number="03"
-  title="Software Development"
+  title="Software"
   backgroundSvg="/projects/Gradient 1.png"
   projects={[
     "Winternship Job Portal",
@@ -397,8 +452,20 @@ function App(){
   allProjects={projects}
 />
 
+<ProjectArcSection
+  number="03"
+  title="UX Design"
+  backgroundSvg="/projects/Gradient 1.png"
+  projects={[
+    "TransitBloom",
+    "Globe.FM",
+    "Our Greenway Website Redesign"
+  ]}
+  allProjects={projects}
+/>
+
 <ProjectArcImageSection
-  number="05"
+  number="04"
   title="Print & Digital Design"
   images={[
     { path: "/design/gardenawards.jpg" },

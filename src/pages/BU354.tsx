@@ -251,7 +251,7 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
     {
       label: "All Dashboards",
       src: "/html/dashboard_distribution.html",
-      image: "/bu354 iframe/dashboard_distribution.png"
+      image: "/bu354 iframe/dashboard_distrubtion.png"
     },
     {
       label: "Dashboard A vs E",
@@ -640,9 +640,9 @@ users would meaningfully notice the difference.
           </p>
 
             <ResponsiveEmbed
-             src="ttps://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share"
+             src="https://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share"
             preview="/bu354 iframe/bu354 hifi.png"
-            href="ttps://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share"
+            href="https://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share"
             height={450}
           />
 
