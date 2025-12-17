@@ -376,8 +376,8 @@ function App(){
   allProjects={projects}
 />
 <ProjectArcImageSection
-  number="01"
-  title="Data"
+  number="05"
+  title="Photography"
   backgroundSvg={DataGradient}
   tools={["Python", "Pandas", "Plotly"]}
   projects={[

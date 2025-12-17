@@ -12,15 +12,6 @@ import Empathize from "@/components/nested_components/Empathize";
 import Solution from "@/components/nested_components/Solution";
 import ParagraphText from "@/components/ParagraphText";
 
-const projectNum = 22
-const { data, error } = await supabase.from('projects').select('*');
-console.log(import.meta.env.VITE_SUPABASE_URL);
-if (error) {
-  console.error("Error loading projects:", error.message);
-} else {
-  console.log("Projects data:", data);
-}
-
 type Props = {
   projectNum: number;
 };
