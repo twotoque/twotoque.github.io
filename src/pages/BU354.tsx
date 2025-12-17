@@ -4,9 +4,11 @@ import PlotEmbed from "@/components/PlotEmbed";
 import PlotWithInsights from "@/components/MultiPlotEmbed";
 import DropdownSection from "@/components/Dropdown";
 import LogoTitle from "@/components/Role";
+import ResponsiveEmbed from "@/components/MobileIframe";
 export default function BU354() {
   // Static brand colour for BU354
   const colour = "#362559";
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
     <>
@@ -118,8 +120,13 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
         <div>
           <h4 className="text-3xl mb-6 !font-light">UNDERSTANDING THE PROBLEM</h4>
   
+            <ResponsiveEmbed
+            src="https://embed.figma.com/board/kVyoyjnmoFNbWv3JQy1JsO/Untitled?node-id=0-1&embed-host=share" 
+            preview="/bu354 iframe/bu354 flow.png"
+            href="https://www.figma.com/board/kVyoyjnmoFNbWv3JQy1JsO/Untitled"
+            height={450}
+          />
 
-          <iframe width="100%" height="450" src="https://embed.figma.com/board/kVyoyjnmoFNbWv3JQy1JsO/Untitled?node-id=0-1&embed-host=share" ></iframe>
 
           <p className="leading-relaxed mb-6">
             BU354 contains multiple weekly group assignments stored in several Word documents.
@@ -129,7 +136,14 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
           </p>
 
 
-          <iframe width="100%" height="450" src="https://embed.figma.com/design/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-5275&embed-host=share" ></iframe>
+
+            <ResponsiveEmbed
+             src="https://embed.figma.com/design/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-5275&embed-host=share"
+            preview="/bu354 iframe/bu354 lowfi.png"
+            href="https://embed.figma.com/design/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-5275&embed-host=share"
+            height={450}
+          />
+
 
           <p className="leading-relaxed">
             Early exploration included mapping typical weekly flows from the
@@ -162,11 +176,13 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
   plots={[
     {
       label: "Major Distribution",
-      src: "/html/major_distribution.html"
+      src: "/html/major_distribution.html",
+      image: "/bu354 iframe/major_distribution.png"
     },
     {
       label: "Year Distribution",
-      src: "/html/year_distribution.html"
+      src: "/html/year_distribution.html",
+      image: "/bu354 iframe/year_distribution.png"
     },
   ]}
 />
@@ -176,7 +192,14 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
         {/* MID-FI TESTING */}
         <div>
           <h4 className="text-3xl mb-6 !font-light">MEDIUM-FIDELITY PROTOTYPE TESTING</h4>
-          <iframe width="100%" height="450" src="https://embed.figma.com/design/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-3109&embed-host=share" ></iframe>
+          
+            <ResponsiveEmbed
+             src="https://embed.figma.com/design/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-3109&embed-host=share"
+            preview="/bu354 iframe/bu354 midfi.png"
+            href="https://embed.figma.com/design/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-3109&embed-host=share"
+            height={450}
+          />
+
           <p className="leading-relaxed mb-6">
             Six variants (Dashboards A–F) were tested using ranking surveys.
             Students rated each dashboard from <b>1 (most liked)</b> to <b>6 (least liked)</b>.
@@ -197,15 +220,18 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
   plots={[
     {
       label: "Dashboard Rankings",
-      src: "/html/dashboard_rankings.html"
+      src: "/html/dashboard_rankings.html",
+      image: "/bu354 iframe/dashboard_rankings.png"
     },
     {
       label: "Dashboard Rankings (incl. Sticky Notes)",
-      src: "/html/dashboard_rankings_total.html"
+      src: "/html/dashboard_rankings_total.html",
+      image: "/bu354 iframe/dashboard_rankings_total.png"
     },
     {
       label: "Rankings by Major",
-      src: "/html/dashboard_by_major_scatter.html"
+      src: "/html/dashboard_by_major_scatter.html",
+      image: "/bu354 iframe/major_rankings.png"
     },
   ]}
 />
@@ -224,19 +250,23 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
   plots={[
     {
       label: "All Dashboards",
-      src: "/html/dashboard_distribution.html"
+      src: "/html/dashboard_distribution.html",
+      image: "/bu354 iframe/dashboard_distribution.png"
     },
     {
       label: "Dashboard A vs E",
-      src: "/html/comparison_A_vs_E.html"
+      src: "/html/comparison_A_vs_E.html",
+      image: "/bu354 iframe/dashboard_ae.png"
     },
     {
       label: "Dashboard A vs D",
-      src: "/html/comparison_A_vs_D.html"
+      src: "/html/comparison_A_vs_D.html",
+      image: "/bu354 iframe/dashboard_ad.png"
     },
     {
       label: "Major Distribution",
-      src: "/html/dashboard_by_major_grouped.html"
+      src: "/html/dashboard_by_major_grouped.html",
+      image: "/bu354 iframe/dashboard_ranking_major.png"
     },
   ]}
 />
@@ -373,11 +403,13 @@ users would meaningfully notice the difference.
   plots={[
     {
       label: "Colour Scheme Bar Graph",
-      src: "/html/colour_theme_bar.html"
+      src: "/html/colour_theme_bar.html",
+      image: "/bu354 iframe/colour_theme_bar.png"
     },
     {
       label: "Colour Scheme Preference Distribution",
-      src: "/html/colour_theme_preference.html"
+      src: "/html/colour_theme_preference.html",
+      image: "/bu354 iframe/colour_theme_preference.png"
     },
   ]}
 />
@@ -485,11 +517,13 @@ users would meaningfully notice the difference.
             plots={[
               {
                 label: "Navigation Bar Graph",
-                src: "/html/navigation_preference_bar.html"
+                src: "/html/navigation_preference_bar.html", 
+                image: "/bu354 iframe/navigation_preference_bar.png"
               },
               {
                 label: "Navigation Preference Distribution",
-                src: "/html/navigation_preference.html"
+                src: "/html/navigation_preference.html", 
+                image: "/bu354 iframe/navigation_preference.png"
               },
             ]}
           />
@@ -508,7 +542,8 @@ users would meaningfully notice the difference.
             plots={[
               {
                 label: "Features Bar Graph",
-                src: "/html/platform_importance_bar.html"
+                src: "/html/platform_importance_bar.html", 
+                image: "/bu354 iframe/platform_importance_bar.png"
               },
               
             ]}
@@ -603,8 +638,14 @@ users would meaningfully notice the difference.
           <p className="leading-relaxed">
             Based on the recommendations, we built high-fidelity prototypes including more than 12+ userflows based on dashboard A. 
           </p>
-          <iframe width="100%" height="800" src="https://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share" ></iframe>
-          
+
+            <ResponsiveEmbed
+             src="ttps://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share"
+            preview="/bu354 iframe/bu354 hifi.png"
+            href="ttps://embed.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard-Public-Figma?node-id=1-6026&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A6026&show-proto-sidebar=1&embed-host=share"
+            height={450}
+          />
+
            </section>
 
       {/* ----------------------------- */}
