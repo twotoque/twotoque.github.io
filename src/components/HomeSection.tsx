@@ -54,19 +54,9 @@ export default function ProjectArcSection({
   const y = useTransform(scrollYProgress, [0, 0.9], ["0%", "80%"]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-cover bg-center py-40 md:py-24 w-full h-full object-fill "
+<section className="relative w-full min-h-screen">
 
-      style={{
-        backgroundImage: `url(${backgroundSvg})`,
-        backgroundRepeat: "no-repeat",
-        
-      }}
-    >
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10" />
-
-      <div className="flex flex-col md:flex-row items-start justify-start textBody px-6 gap-8">
+      <div className="z-10 flex flex-col md:flex-row items-start justify-start textBody !mb-0 gap-8">
         <motion.div
           style={{ y }}
           className="md:w-[30%] flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"

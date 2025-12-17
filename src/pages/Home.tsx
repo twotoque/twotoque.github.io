@@ -13,7 +13,6 @@ import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { supabase } from '@/lib/supabaseClient';
 import ProjectArcSection from "../components/HomeSection";
-import DataGradient from "../assets/Gradient1.svg";
 import PhotoArcSection from "../components/HomeSectionPhotos"
 import LogoTitle from "../components/Role";
 import ProjectCard2 from "@/components/ProjectCard rev2";
@@ -364,7 +363,7 @@ function App(){
 <ProjectArcSection
   number="01"
   title="Data & Product"
-  backgroundSvg={DataGradient}
+  backgroundSvg="/projects/Gradient 1.png"
   projects={[
     "BU354 Assignment Platform",
     "Toronto Census Visualizer",
@@ -378,15 +377,16 @@ function App(){
 <ProjectArcImageSection
   number="05"
   title="Photography"
-  backgroundSvg={DataGradient}
-  tools={["Python", "Pandas", "Plotly"]}
-  projects={[
-    "Toronto Census Visualizer",
-    "Scarborough North Bike Share Research",
-    "Design and Research for TTCriders",
-    "YUlearn",
+  images={[
+    { path: "/pictures/IMG_0645.jpg" },
+    { path: "/pictures/IMG_0001.jpg" },
+    { path: "/pictures/IMG_0347.jpg" },
+    { path: "/pictures/IMG_0955.jpg" },
+    { path: "/pictures/IMG_2472.jpg" },
+    { path: "/pictures/IMG_2674.jpg" },
+    { path: "/pictures/IMG_8986.jpg" },
+    { path: "/pictures/IMG_8813.jpg" }
   ]}
-  allProjects={projects}
 />
 
     
