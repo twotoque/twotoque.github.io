@@ -374,12 +374,66 @@ function App(){
   ]}
   allProjects={projects}
 />
+<ProjectArcSection
+  number="02"
+  title="UX Design"
+  backgroundSvg="/projects/Gradient 1.png"
+  projects={[
+    "TransitBloom",
+    "Globe.FM",
+    "Our Greenway Website Redesign"
+  ]}
+  allProjects={projects}
+/>
+<ProjectArcSection
+  number="03"
+  title="Software Development"
+  backgroundSvg="/projects/Gradient 1.png"
+  projects={[
+    "Winternship Job Portal",
+    "Scrape2TeX",
+    "Atomic Search & Decay Calculator"
+  ]}
+  allProjects={projects}
+/>
+
 <ProjectArcImageSection
   number="05"
+  title="Print & Digital Design"
+  images={[
+    { path: "/design/gardenawards.jpg" },
+    { path: "/design/housing.jpg" },
+    { path: "/design/launchphone.jpg" },
+    { path: "/design/newsletter.jpg" },
+    { path: "/design/rally.jpg" },
+    { path: "/design/graduation.jpg" },
+    { path: "/design/jammies.jpg" },
+    { path: "/design/ourgreenwaylogo.jpg" },
+    { path: "/design/yearbook.png" },
+  ]}
+/>
+
+
+<ProjectArcSection
+  number="05"
+  title="Video Editing"
+  backgroundSvg="/projects/Gradient 1.png"
+  projects={[
+    "Architectural Conservancy Ontario Heritage Awards",
+    "WLU CSA Vice Presidents Video"
+  ]}
+  allProjects={projects}
+/>
+
+<ProjectArcImageSection
+  number="06"
   title="Photography"
   images={[
+    { path: "/pictures/IMG_0002.jpg" },
     { path: "/pictures/IMG_0645.jpg" },
     { path: "/pictures/IMG_0001.jpg" },
+    { path: "/pictures/IMG_0003.jpg" },
+    { path: "/pictures/IMG_0004.jpg" },
     { path: "/pictures/IMG_0347.jpg" },
     { path: "/pictures/IMG_0955.jpg" },
     { path: "/pictures/IMG_2472.jpg" },

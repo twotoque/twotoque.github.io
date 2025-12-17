@@ -32,7 +32,7 @@ export default function ProjectArcImageSection({
   const y = useTransform(scrollYProgress, [0, 0.9], ["0%", "80%"]);
 
   return (
-<section className="relative w-full py-40 md:py-24">
+<section className="relative w-full  ">
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10" />
 
       <div className="flex flex-col md:flex-row items-start justify-start textBody gap-8">

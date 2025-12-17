@@ -54,7 +54,7 @@ export default function ProjectArcSection({
   const y = useTransform(scrollYProgress, [0, 0.9], ["0%", "80%"]);
 
   return (
-<section className="relative w-full min-h-screen">
+<section className="relative w-full">
 
       <div className="z-10 flex flex-col md:flex-row items-start justify-start textBody !mb-0 gap-8">
         <motion.div
