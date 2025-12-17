@@ -38,6 +38,7 @@ type PlotOption = {
 type PlotWithInsightsProps = {
   title: string;
   height?: number;
+  insights?: React.ReactNode;
   plots: PlotOption[];
 };
 
@@ -54,7 +55,6 @@ export default function PlotWithInsights({
       {/* MAX WIDTH WRAPPER */}
       <div className="w-full flex flex-col justify-center items-center">
         
-        {/* PLOT — CENTERED */}
             <PlotEmbed
               src={activePlot.src}
               title={title}

@@ -366,10 +366,12 @@ function App(){
   title="Data & Product"
   backgroundSvg={DataGradient}
   projects={[
+    "BU354 Assignment Platform",
     "Toronto Census Visualizer",
+    "PlateMate",
     "Scarborough North Bike Share Research",
-    "Design and Research for TTCriders",
-    "TransitBloom",
+    "Scarborough North Event Map",
+    "FlightPath Downsview"
   ]}
   allProjects={projects}
 />

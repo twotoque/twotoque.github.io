@@ -38,15 +38,7 @@ export default function BU354() {
             <div className="md:w-5/7 space-y-4">
               <h4 className="!font-light mb-4">OVERVIEW</h4>
               <p>
-                The BU354 Dashboard was developed for the Human Resources
-                Management faculty at Wilfrid Laurier University. Across more
-                than 59 student participants, this comparative usability study
-                evaluated multiple dashboard layouts (A–F), navigation patterns,
-                and Laurier-branded colour schemes. Dashboard A emerged as the
-                preferred layout—especially among students required to take
-                BU354—leading to the final design direction featuring a
-                collapsible sidebar, strong Laurier purple branding, and clearer
-                deadline visibility.
+The BU354 Dashboard is a purpose-built digital learning platform developed for the Human Resources Management class at Wilfrid Laurier University to help students more effectively track assignments, deadlines, and course progress within a high-enrolment core course. The platform was evaluated through a comparative usability study involving 59 student participants, who assessed six dashboard variants across layout structure, navigation patterns, and Laurier-branded colour schemes, generating both quantitative rankings and qualitative feedback. The dashboard was developed as a modular, production-ready system using Next.js, Prisma, and BetterAuth.
               </p>
 
               <h4 className="!font-light mt-10 mb-4">CHECK IT OUT</h4>
@@ -66,7 +58,7 @@ export default function BU354() {
             <div className="md:w-2/7 space-y-6">
               <h4 className="!font-light mb-4">CLIENT</h4>
               <p>
-                <b>Dr. Steve Risavy - BU354 Human Resources Management</b>
+                <b>Dr. Steve Risavy (Head Instructor, BU354 Human Resources Management)</b>
               </p>
 
               <h4 className="!font-light mb-4">MY ROLE</h4>
@@ -79,7 +71,7 @@ export default function BU354() {
 
               <h4 className="!font-light mb-4">TOOLS</h4>
               <p>
-                <b>Figma, Prisma, BetterAuth, Next.Js, Supabase, TypeScript, Statistical Hypothesis Inferencing</b>
+                <b>Next.js, Prisma, BetterAuth, Supabase, TypeScript, Figma, Python, Statistical Hypothesis Inferencing</b>
               </p>
             </div>
           </div>
@@ -93,18 +85,18 @@ export default function BU354() {
           <h4 className="!font-light mt-0 mb-4">DESIGN PROMPT</h4>
           <h3 className="m-0">
             How might we build a dedicated dashboard that helps BU354 students
-            clearly understand deadlines, track weekly deliverables, and navigate
-            tasks more intuitively than existing LMS tools?
+            clearly understand deadlines, track weekly group deliverables, and navigate
+            tasks more seamlessly than existing learning management tools?
           </h3>
         </div>
         </section><section className="headerBody">
         <div>
           <h4 className="text-3xl mb-6 !font-light">PROJECT OVERVIEW</h4>
           <p className="leading-relaxed">
-            The BU354 Dashboard was created for <b>Human Resources Management</b> at the
+            The BU354 Dashboard was created for Human Resources Management at the
             Lazaridis School of Business & Economics. Over the Fall 2025 term,
-            I led the UX research, prototyping, and testing process under the
-            Laurier Start-Up Lab. Input from <b>59+ students</b> shaped the final
+            I led the UX research, prototyping, API creation and development process under the
+            Laurier Start-Up Lab. Input from 59+ students shaped the final
             design recommendations, including colour theme evaluations, navigation
             preferences, and dashboard ranking tests across 7 medium-fidelity prototypes.
           </p>
@@ -250,7 +242,7 @@ export default function BU354() {
 />
 
 
-<DropdownSection title="HOW TO READ AND INTERPRET THIS DATA?" >
+<DropdownSection title="HOW TO READ, DERIVE, AND INTERPRET THIS DATA?" >
   <p className="leading-relaxed mb-4">
     These box plots show how students ranked each dashboard
     (<b>1 = most liked</b>, <b>6 = least liked</b>). Lower medians and tighter
@@ -390,8 +382,8 @@ users would meaningfully notice the difference.
   ]}
 />
 
-<DropdownSection title="HOW TO READ AND INTERPRET THIS DATA?" >
-  <h5 className="text-lg font-semibold mb-2 mt-8">
+<DropdownSection title="HOW TO READ, DERIVE, AND INTERPRET THIS DATA?" >
+  <h5 className="text-lg font-semibold mb-2">
   Chi-square Tests (Categorical Preferences)
 </h5>
 
