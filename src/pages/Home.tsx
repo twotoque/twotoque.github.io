@@ -18,6 +18,7 @@ import LogoTitle from "../components/Role";
 import ProjectCard2 from "@/components/ProjectCard rev2";
 import ProjectArcImageSection from "../components/HomeSectionPhotos";
 import CustomButton from "@/components/Button";
+import StatsSection from "@/components/HomeSectionSports";
 
 const SENTENCES = [
   "building digital tools that help people understand market data",
@@ -510,7 +511,30 @@ function App(){
   ]}
 />
 
+
+
+        <div className="textBody !pt-0 !mb-0">
+<motion.h1 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
+  Outside of the Office
+</motion.h1>
+</div>
+
+<StatsSection
+  number="07"
+  title="Gym"
+  stats={[
+    { label: "Total Distance", value: "173", unit: "km"},
+    { label: "5km PR", value: "24:27", unit: ""},
+    { label: "10km PR", value: "56:37", unit: ""},
+    { label: "10mile PR", value: "1:51:57", unit: ""},
+    { label: "Longest non-stop run", value: "16.35", unit: "km"},
+    { label: "Bench press", value: "135", unit: "kg"},
+    { label: "Sporting Life 10k (May 11 2025)", value: "58:08", unit: ""},
+    { label: "Under Armour Toronto 10k (June 15 2024)", value: "1:11:06", unit: ""},
+  ]}
+/>
     
+
   </div>
 }
 

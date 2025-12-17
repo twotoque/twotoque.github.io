@@ -1,27 +1,50 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import ProjectCard from "./ProjectCard";
-import { useMemo, useRef  } from "react";
-import ProjectCard2 from "@/components/ProjectImage rev2";
-interface ImageItem {
-  path: string;
-  title?: string;
+import { useRef } from "react";
+
+interface StatCardProps {
+  label: string;
+  value: string | number;
+  unit?: string;
+  icon?: string;
 }
 
-interface ProjectArcSectionProps {
+function StatCard({ label, value, unit, icon }: StatCardProps) {
+  return (
+    <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300 break-inside-avoid">
+      <div className="flex items-start justify-between ">
+        <h4 className="p-0 !m-0 text-gray-700 font-semibold text-lg">{label}</h4>
+      </div>
+      <div className="!flex items-baseline gap-1">
+       
+        <h1 className="p-0 !m-0 text-4xl font-bold text-gray-900">{value}</h1>
+        {unit && <h2 className="p-0 !m-0 text-xl text-gray-600">{unit}</h2>}
+      </div>
+    </div>
+  );
+}
+
+interface Stat {
+  label: string;
+  value: string | number;
+  unit?: string;
+  icon?: string;
+}
+
+interface StatsArcSectionProps {
   number: string;
   title: string;
   backgroundSvg?: string;
   tools?: string[];
-  images: ImageItem[];
+  stats: Stat[];
 }
 
-export default function ProjectArcImageSection({
+export default function StatsArcSection({
   number,
   title,
   backgroundSvg,
   tools,
-  images
-}: ProjectArcSectionProps) {
+  stats
+}: StatsArcSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -31,13 +54,14 @@ export default function ProjectArcImageSection({
 
 
   return (
-<section className="relative w-full  ">
+    <section className="relative w-full">
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px] -z-10" />
-
+      
       <div className="flex flex-col md:flex-row items-start justify-start textBody gap-8">
+        
         {/* LEFT COLUMN */}
         <motion.div
-          className="md:w-[30%] mb-10 sm:mb-0  flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
+          className="md:w-[30%] mb-10 sm:mb-0 flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
         >
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
             {number} / <br />
@@ -62,8 +86,8 @@ export default function ProjectArcImageSection({
         </motion.div>
 
         <div className="w-full columns-1 md:columns-2 2xl:columns-3 space-y-8">
-          {images.length > 0 ? (
-            images.map((img, idx) => (
+          {stats.length > 0 ? (
+            stats.map((stat, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
@@ -71,15 +95,12 @@ export default function ProjectArcImageSection({
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="w-full sm:w-auto"
               >
-                <ProjectCard2
-                  image={img.path}
-                  {...(img.title ? { title: img.title } : {})}
-                />
+                <StatCard {...stat} />
               </motion.div>
             ))
           ) : (
             <p className="text-gray-500 text-lg italic col-span-full text-center">
-              No images.
+              No stats available.
             </p>
           )}
         </div>

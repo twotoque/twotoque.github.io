@@ -51,14 +51,12 @@ export default function ProjectArcSection({
     offset: ["start start", "end end"], 
   });
 
-  const y = useTransform(scrollYProgress, [0, 0.9], ["0%", "80%"]);
 
   return (
 <section className="relative w-full">
 
       <div className="z-10 flex flex-col md:flex-row items-start justify-start textBody !mb-0 gap-8">
         <motion.div
-          style={{ y }}
           className="md:w-[30%] mb-10 sm:mb-0 flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
 >
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
