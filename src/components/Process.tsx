@@ -13,7 +13,8 @@ const Process: React.FC<StepFlowProps> = ({ steps, bgColor ="bg-gray-900" }) => 
         <div key={step} className="flex items-center">
             <a
               href={`#${step.toLowerCase().replace(/\s+/g, "-")}`}
-              className={`${bgColor} no-underline text-white rounded-xl mt-2 px-6 py-6 text-sm font-semibold whitespace-nowrap transition-transform duration-200 hover:scale-105 hover:shadow-md`}
+              style={{ backgroundColor: bgColor }}
+              className={`no-underline text-white rounded-xl mt-2 px-6 py-6 text-sm font-semibold whitespace-nowrap transition-transform duration-200 hover:scale-105 hover:shadow-md`}
               onClick={(e) => {
                 e.preventDefault();
                 const id = step.toLowerCase().replace(/\s+/g, "-");
