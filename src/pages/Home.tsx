@@ -19,6 +19,7 @@ import ProjectCard2 from "@/components/ProjectCard rev2";
 import ProjectArcImageSection from "../components/HomeSectionPhotos";
 import CustomButton from "@/components/Button";
 import StatsSection from "@/components/HomeSectionSports";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const SENTENCES = [
   "building digital tools that help people understand market data",
@@ -100,6 +101,9 @@ function App(){
         </a>
         <a href="https://github.com/twotoque/">
           <FontAwesomeIcon icon={faGithub} className="button" />
+        </a>
+        <a href="mailto:dereksong28@gmail.com">
+          <FontAwesomeIcon icon={faEnvelope} className="button" />
         </a>
     </motion.div>
     </div>
@@ -523,17 +527,39 @@ function App(){
   number="07"
   title="Gym"
   stats={[
-    { label: "Total Distance", value: "173", unit: "km"},
+    { label: "Total distance ran", value: "173", unit: "km"},
     { label: "5km PR", value: "24:27", unit: ""},
     { label: "10km PR", value: "56:37", unit: ""},
     { label: "10mile PR", value: "1:51:57", unit: ""},
     { label: "Longest non-stop run", value: "16.35", unit: "km"},
-    { label: "Bench press", value: "135", unit: "kg"},
+    { label: "Bench press", value: "135", unit: "lb"},
     { label: "Sporting Life 10k (May 11 2025)", value: "58:08", unit: ""},
     { label: "Under Armour Toronto 10k (June 15 2024)", value: "1:11:06", unit: ""},
+    { label: "Laurier recreational dance showcases", value: "5", unit: "showcases performed"},
   ]}
 />
-    
+<ProjectArcSection
+  number="08"
+  title="Dance"
+  backgroundSvg="/projects/Gradient 1.png"
+  projects={[
+    "Afrofusion",
+    "K-Pop",
+  ]}
+  allProjects={projects}
+/>
+
+<ProjectArcImageSection
+  number="09"
+  title="Cat"
+  images={[
+    { path: "/cat/cat1.jpg" },
+    { path: "/cat/cat2.jpg" },
+    { path: "/cat/cat3.jpg" },
+  ]}
+/>
+
+
 
   </div>
 }

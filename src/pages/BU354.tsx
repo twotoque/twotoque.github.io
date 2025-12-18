@@ -50,7 +50,7 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
                   label="View Prototype"
                 />
                 <CustomButton
-                  href="/files/BU354 Comparative Usability Report.pdf"
+                  href="/http://localhost:5173/BU354%20Comparative%20Usability%20Report%20with%20High-Fidelity%20Prototypes%20and%20Formulas.pdf"
                   label="View Full Report"
                 />
               </div>
@@ -727,6 +727,13 @@ users would meaningfully notice the difference.
 
         <h4 className="text-3xl mb-6 !font-light">HOW IT LOOKS</h4>
         
+<iframe
+        src="https://www.youtube.com/embed/CzjIXki1JBQ"
+        title="YouTube video player"  
+        className="w-full h-auto  aspect-video mb-10"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
 
         <div style={{ background: colour }}>
           <div className="headerBody flex justify-center">

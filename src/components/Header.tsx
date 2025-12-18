@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Mail } from "lucide-react";
 
 function Header() {
   return (
@@ -9,8 +10,13 @@ function Header() {
 
             <nav className="flex space-x-10 text-sm text-gray-600">
                 <h3><Link to="/resume" className="inline-block text-gray-600 hover:text-black hover:scale-110 transition duration-200 no-underline hover:font-bold">Resume</Link></h3>
-                <h3><Link to="/contact" className="inline-block text-gray-600 hover:text-black hover:scale-110 transition duration-200 no-underline hover:font-bold">Contact</Link></h3>
-            </nav>
+                <a
+  href="mailto:dereksong28@gmail.com"
+  className="flex items-center gap-2 !text-gray-600 text-muted-foreground hover:text-foreground transition"
+>
+  <Mail className="size-10" />
+</a>
+        </nav>
             
       </div>
     </header>
