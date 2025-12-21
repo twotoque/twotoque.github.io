@@ -46,8 +46,8 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
               <h4 className="!font-light mt-10 mb-4">CHECK IT OUT</h4>
               <div className="flex gap-3 flex-wrap">
                 <CustomButton
-                  href="https://www.figma.com/proto/iyxzz8QmrJeckuwllBQChe/BU354-Dashboard"
-                  label="View Prototype"
+                  href="https://www.youtube.com/watch?v=CzjIXki1JBQ"
+                  label="View Live Demo"
                 />
                 <CustomButton
                   href="/BU354%20Comparative%20Usability%20Report%20with%20High-Fidelity%20Prototypes%20and%20Formulas.pdf"
