@@ -50,7 +50,7 @@ The BU354 Dashboard is a purpose-built digital learning platform developed for t
                   label="View Prototype"
                 />
                 <CustomButton
-                  href="/http://localhost:5173/BU354%20Comparative%20Usability%20Report%20with%20High-Fidelity%20Prototypes%20and%20Formulas.pdf"
+                  href="/BU354%20Comparative%20Usability%20Report%20with%20High-Fidelity%20Prototypes%20and%20Formulas.pdf"
                   label="View Full Report"
                 />
               </div>
