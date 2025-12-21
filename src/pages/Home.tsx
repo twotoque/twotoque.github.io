@@ -23,11 +23,15 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const SENTENCES = [
   "building digital tools that help people understand market data",
-  "building digital tools that help people understand how the city works",
+  "building digital tools that help people understand civic systems",
+  "designing print materials that engage 30,000+ households",
   "building digital tools that help people navigate public services",
-  "building digital tools that help people make better decisions",
-  "building digital tools that translate machine learning results into usable insights",
+  "building digital tools that help people make informed decisions",
+  "designing print materials that balance form and function",
+  "building digital tools that translate machine learning into insights",
+  "designing visual systems that communicate ideas with clarity",
 ];
+
 
 interface Project {
   title: string;
@@ -482,6 +486,7 @@ function App(){
     { path: "/design/jammies.jpg" },
     { path: "/design/ourgreenwaylogo.jpg" },
     { path: "/design/yearbook.png" },
+    { path: "/design/drawing.png" },
   ]}
 />
 
@@ -499,7 +504,7 @@ function App(){
 
 <ProjectArcImageSection
   number="06"
-  title="Photography"
+  title="Photos"
   images={[
     { path: "/pictures/IMG_0002.jpg" },
     { path: "/pictures/IMG_0645.jpg" },
