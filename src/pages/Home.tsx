@@ -416,7 +416,7 @@ function App(){
         />
         </motion.p>
       <motion.h5 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       Last updated: December 17, 2025
+       Last updated: January 1, 2026
       </motion.h5>
 
       
@@ -533,7 +533,7 @@ function App(){
   number="07"
   title="Gym"
   stats={[
-    { label: "Total distance ran", value: "173", unit: "km"},
+    { label: "Total distance ran", value: "763", unit: "km"},
     { label: "5km PR", value: "24:27", unit: ""},
     { label: "10km PR", value: "56:37", unit: ""},
     { label: "10mile PR", value: "1:51:57", unit: ""},
