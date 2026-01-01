@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import CustomButton from "@/components/Button";
 
@@ -12,10 +12,27 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-const RESUME_URL = "/Derek Song Resume December 2025.pdf";
+const RESUME_URL = "/Derek Song Resume January 2026.pdf";
 
 export default function Resume() {
   const [numPages, setNumPages] = useState<number>(0);
+  const [containerWidth, setContainerWidth] = useState<number>(850);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Handle responsiveness
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        // Subtract padding/margins of the parent container
+        const newWidth = containerRef.current.offsetWidth - 48; // Adjust based on p-4 or p-6
+        setContainerWidth(newWidth > 850 ? 850 : newWidth);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
   return (
     <>
@@ -24,7 +41,7 @@ export default function Resume() {
       {/* ----------------------------- */}
       {/* RESUME HEADER */}
       {/* ----------------------------- */}
-      <section className="headerBody  pb-10">
+      <section className="headerBody pb-10">
         <div className="flex flex-wrap gap-3">
           <CustomButton
             href={RESUME_URL}
@@ -38,7 +55,10 @@ export default function Resume() {
       {/* ----------------------------- */}
       <section className="headerBody pb-24">
         <div className="flex justify-center">
-          <div className="w-full max-w-[900px] bg-white border border-black/10 rounded-xl shadow-sm p-4 md:p-6">
+          <div 
+            ref={containerRef}
+            className="w-full max-w-[900px] bg-white border border-black/10 rounded-xl shadow-sm p-4 md:p-6 overflow-hidden"
+          >
             <Document
               file={RESUME_URL}
               onLoadSuccess={({ numPages }) => setNumPages(numPages)}
@@ -53,7 +73,8 @@ export default function Resume() {
                     renderTextLayer={false}
                     renderAnnotationLayer={false}
                     className="mx-auto shadow border border-black/10"
-                    width={850}
+                    // Use the dynamic width here
+                    width={containerWidth}
                   />
                 ))}
               </div>

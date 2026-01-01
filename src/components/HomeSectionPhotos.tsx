@@ -64,18 +64,13 @@ export default function ProjectArcImageSection({
         <div className="w-full columns-1 md:columns-2 2xl:columns-3 space-y-8">
           {images.length > 0 ? (
             images.map((img, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="w-full sm:w-auto"
+              <div
               >
                 <ProjectCard2
                   image={img.path}
                   {...(img.title ? { title: img.title } : {})}
                 />
-              </motion.div>
+              </div>
             ))
           ) : (
             <p className="text-gray-500 text-lg italic col-span-full text-center">

@@ -63,7 +63,7 @@ h5{
 .frontGroup{
   position: "relative";
   z-index: 3;
-  margin-left: 18rem;
+  margin-left: 12rem;
   line-height: 1rem;
   padding-top: 10vw;
   max-width: 40%;
@@ -80,10 +80,32 @@ h5{
 
 .textBody{
   padding-top:4rem;
-  margin-left: 18rem;
-  margin-right: 18rem;
   margin-bottom: 15rem;
 }
+
+@media (min-width: 768px) {      /* md */
+  .textBody {
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+  .frontGroup{
+
+    margin-left: 12rem;
+  }
+}
+
+@media (min-width: 1500px) {      /* lg */
+  .textBody {
+    margin-left: 18rem;
+    margin-right: 18rem;
+  }
+  .frontGroup{
+
+    margin-left: 18rem;
+  }
+}
+
+
 .socialMedia {
   display:flex;
   flex-direction: row;

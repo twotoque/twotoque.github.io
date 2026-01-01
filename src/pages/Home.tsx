@@ -241,7 +241,7 @@ function App(){
 
       <LogoTitle
         logoSrc="./logos/ttcriders-logo.png"
-        title="Community Planner"
+        title="Community Planner and Graphic Designer"
         subtitle="TTCriders"
         dateJob="May 2022 - September 2023"
 
@@ -434,17 +434,17 @@ function App(){
 */}
 <ProjectArcSection
   number="01"
-  title="Data & Product"
+  title="Product & Data"
   backgroundSvg="/projects/Gradient 1.png"
   projects={[
     "BU354 Assignment Platform",
-    "Toronto Census Visualizer",
-    "PlateMate",
-    "Wheel-Trans TTCriders Accessibility Report",
-    "Scarborough North Bike Share Research",
     "FlightPath Downsview",
+    "Toronto Census Visualizer",
+    "Wheel-Trans TTCriders Accessibility Report",
+    "Smart Bike Resistance Project",
     "Scarborough North Event Map",
-    "Keep Scarborough Connected TTCriders Report",
+    "PlateMate",
+    "Scarborough North Bike Share Research",
   ]}
   allProjects={projects}
 />
@@ -468,7 +468,8 @@ function App(){
   projects={[
     "TransitBloom",
     "Globe.FM",
-    "Our Greenway Website Redesign"
+    "Our Greenway Website Redesign",
+    "YUlearn"
   ]}
   allProjects={projects}
 />

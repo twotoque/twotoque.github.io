@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import ScrollTop from "./components/ScrollTop";
 import BU354 from "./pages/BU354";
 import ResumePage from "./pages/Resume";
+import BikeShare from "./pages/BikeShare";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/bu354" element={<BU354/>} />
         <Route path="/resume" element={<ResumePage/>} />
+        <Route path="/bikeshare" element={<BikeShare/>} />
         <Route path="/transitbloom" element={<ProjectPage projectNum={22} />} />
         <Route path="/yulearn" element={<ProjectPage projectNum={27} />} />
       </Routes>

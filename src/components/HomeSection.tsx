@@ -56,7 +56,7 @@ export default function ProjectArcSection({
 <section className="relative w-full">
 
       <div className="z-10 flex flex-col md:flex-row items-start justify-start textBody !mb-0 gap-8">
-        <motion.div
+        <div
           className="md:w-[30%] mb-10 sm:mb-0 flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
 >
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
@@ -79,22 +79,18 @@ export default function ProjectArcSection({
               </ul>
             </div>
           )}
-        </motion.div>
+        </div>
 
       <div className="w-full columns-1 md:columns-2 2xl:columns-3 space-y-8">
           {filtered.length > 0 ? (
             filtered.map((proj, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="w-full sm:w-auto"
               >
                 <a href={proj.link} className="!no-underline">
                   <ProjectCard2 {...proj} />
                 </a>
-              </motion.div>
+              </div>
             ))
           ) : (
             <p className="text-gray-500 text-lg italic col-span-full text-center">
