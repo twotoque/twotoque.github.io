@@ -430,7 +430,8 @@ export default function BikeShare() {
           <p className="leading-relaxed mt-6">
             A critical finding was the "Safety vs. Ownership" barrier. Many residents reported 
             using public transit or driving instead of biking due to the risk of bike theft and 
-            the burden of maintenance. 
+            the burden of maintenance. Bike Share stations alleviate these concerns as the bikes are docked in stations (therefore less likely to be stolen)
+            and maintained by the service, making cycling a more viable option for those hesitant to own a bike.
           </p>
 
           <PlotWithInsights
@@ -470,7 +471,187 @@ export default function BikeShare() {
           />
         </div>
 
+<div>
+  <h4 className="text-3xl mb-6 !font-light">MODE-SPECIFIC DESTINATIONS & TRAVEL BEHAVIOURS</h4>
+
+  <p className="leading-relaxed">
+    To contextualize Bike Share Toronto’s role within the residents of Ward 23, results were 
+    analyzed by primary mode of travel. These included biking, public transportation,
+    and driving. Grouping findings this way highlights where daily travel concentrates,
+    why residents choose specific modes, and where Bike Share could most effectively
+    reduce friction or substitute short trips.
+  </p>
+
+
+  <PlotWithInsights
+    title="Biking Usage, Destinations, and Motivations"
+    plots={[
+      {
+        label: "Seasonal Biking Usage",
+        src: "/bikeshare iframe/biking_usage_spring.html",
+        image: "/projects/bikeshare/biking_usage.png",
+      },
+      {
+        label: "Biking Destinations",
+        src: "/bikeshare iframe/biking_destinations.html",
+        image: "/projects/bikeshare/biking_destinations.png",
+      },
+      {
+        label: "Reasons for Biking",
+        src: "/bikeshare iframe/biking_justification.html",
+        image: "/projects/bikeshare/biking_justification.png",
+      },
+    ]}
+  />
+
+  <p className="leading-relaxed">
+    Biking within Ward 23 is primarily utilitarian, with respondents cycling to work,
+    shopping areas, and local destinations. Usage is highest during spring, summer,
+    and fall, and motivations for biking are evenly split across convenience, cost,
+    personal health, and environmental considerations.
+  </p>
+
+  <PlotWithInsights
+    title="Public Transportation Destinations and Barriers"
+    plots={[
+      {
+        label: "Public Transit Destinations",
+        src: "/bikeshare iframe/pt_destinations_filtered.html",
+        image: "/projects/bikeshare/pt_destinations.png",
+      },
+      {
+        label: "Why Transit is Chosen Over Biking",
+        src: "/bikeshare iframe/pt_instead_of_bike.html",
+        image: "/projects/bikeshare/pt_barriers.png",
+      },
+      {
+        label: "Bikes on Transit",
+        src: "/bikeshare iframe/pt_bikes_on_transit.html",
+        image: "/projects/bikeshare/pt_bikes.png",
+      },
+    ]}
+  />
+
+  <p className="leading-relaxed ">
+    Transit trips commonly terminate at major hubs such as Scarborough Town Centre,
+    Finch Station, Kennedy Station, and Union Station. However, most respondents do
+    not combine biking with transit, citing safety concerns, maintenance overhead,
+    and theft risk. These are all factors that Bike Share stations near transit hubs could mitigate.
+  </p>
+
+
+  <PlotWithInsights
+    title="Driving Destinations and Reasons for Car Use"
+    plots={[
+      {
+        label: "Driving Destinations",
+        src: "/bikeshare iframe/survey_driving_destinations_scarborough.html",
+        image: "/projects/bikeshare/driving_destinations.png",
+      },
+      {
+        label: "Why Driving is Chosen Over Biking",
+        src: "/bikeshare iframe/driving_instead_of_bike.html",
+        image: "/projects/bikeshare/driving_barriers.png",
+      },
+    ]}
+  />
+
+  <p className="leading-relaxed mt-6 mb-10">
+    Driving remains prevalent for longer or multi-stop trips, particularly to
+    shopping centres and employment areas. Respondents frequently cited distance,
+    safety, and weather as reasons for choosing a car over biking, indicating that
+    Bike Share may be most effective for shorter, local trips rather than direct
+    substitution of longer driving journeys.
+  </p>
+
+  <h4 className="text-2xl mb-4 !font-light">FUTURE BIKE SHARE PREFERENCES</h4>
+
+  <PlotWithInsights
+    title="Resident-Identified Future Bike Share Locations"
+    plots={[
+      {
+        label: "Future Bike Share Stations",
+        src: "/bikeshare iframe/survey_bikeshare_stations_scarborough.html",
+        image: "/projects/bikeshare/future_stations_map.png",
+      },
+    ]}
+  />
+
+  <p className="leading-relaxed mt-6">
+    Preferred future station locations strongly overlap with existing biking,
+    transit, and driving destinations, particularly Woodside Square, Milliken GO
+    Station, Malvern Town Centre, and major corridors. This means that residents may
+    be more likely to use Bike Share if stations are placed at these high-demand nodes, including 
+    combining several modes of transportation to reach a destination.
+  </p>
+</div>
+
+        <h4 className="text-3xl mb-6 !font-light">FINDINGS AND RECOMMENDATIONS</h4>
+        <p className="leading-relaxed mt-6">
+Based on survey responses, interviews, and supporting census data, several key patterns emerged regarding residents' biking behaviour, infrastructure needs, and the potential role of Bike Share Toronto within Ward 23. The following points summarize observed trends in destinations, safety perceptions, seasonal usage, and modal choice, and highlight opportunities to support increased biking through targeted station placement and infrastructure improvements.
+</p>
+        <ul className="text-lg list-disc pl-6 space-y-2 mt-2">
+  <li>
+    A Bike Share Toronto station should be placed in Woodside Square, Milliken GO station, and along the hydro corridor. Future expansion should include the redevelopment of Malvern Town Centre concurrent with bike infrastructure expansion and further redevelopment along the area.
+    <ul>
+      <li>Various interviewees responded about how they frequented stations like Milliken for downtown travel, Woodside/STC/Malvern Town Centre for shopping.</li>
+      <li>While various residents responded that they drove or took public transportation to the area, they preferred/would be open to biking.</li>
+        </ul>
+  </li>
+
+  <li>
+    A major obstacle towards biking can be mitigated by Bike Share Toronto, reducing the risk of bike maintenance
+  </li>
+
+  <li>
+    It continues to be vital for bike infrastructure to be improved to facilitate increased biking within Ward 23.
+    <ul>
+      <li>Respondents noted major roads without bike lanes as mainly less safe  than their counterparts with bike lanes </li>
+      <li>Parks remain a popular medium to bike alongside hydro corridors </li>
+      <li>Residential roads and sidewalks incurred mixed opinions</li>
+      <li>Interviewees noted how scary it would be riding right beside cars, and liked the separation given by bike lanes</li>
+    </ul>
+  </li>
+
+  <li>
+    Utilitarian biking was common within our sample size, with interviewees expanding that they use biking to get to work as it was faster than taking public transportation or driving.
+    <ul>
+      <li>Reasons given for biking are evenly split between convenience, cost, personal health, and environmental reasons</li>
+     
+    </ul>
+  </li>
+
+  <li>
+    Biking remains popular in Scarborough North around areas including Woodside Square, Malvern Town Centre, and Steeles Avenue East
+   
+  </li>
+
+  <li>
+    Biking remains relatively high in Ward 23 in the spring, summer, and fall, and dips in the winter
+
+  </li>
+
+  <li>
+    Census data collected in 2021 states Ward 23 biking compared to the rest of the city is relatively low. Driving is higher in Scarborough at-large compared to the downtown core, a pattern shared by suburban areas of Toronto
+ 
+     
+  </li>
+
+  <li>
+    Bike Share Toronto is known by a lot of residents in Ward 23.
+  </li>
+
+  <li>
+    A majority of residents do not use their bikes in conjunction with public transportation
+    <ul>
+      <li>Interviewees noted how they would usually take one or the other.</li>
+      <li>Some interviewees used Bike Share downtown, but took public transportation to get downtown</li>
+    </ul>
+  </li>
+</ul>
+
       </section>
+      
     </>
   );
 }
