@@ -316,11 +316,161 @@ export default function BikeShare() {
               </div>
             </div>
           </div>
+
+          
         </section>
+
+        
         </div>
         </div>
           </div>
      </section>
+     {/* ----------------------------- */}
+      {/* SECTION 2 — CENSUS CONTEXT   */}
+      {/* ----------------------------- */}
+      
+      <section className="headerBody">
+        <div>
+          <h4 className="text-3xl mb-6 !font-light">CENSUS CONTEXT: WARD 23 TRANSPORTATION</h4>
+          <p className="leading-relaxed mb-6">
+            Before identifying specific station locations, it was necessary to analyze existing 
+            commuter patterns. 2021 Census data reveals that while Ward 23 (Scarborough North) 
+            has a strong reliance on driving, there are pockets of high public transit usage that 
+            represent prime opportunities for first/last-mile bike share integration.
+          </p>
+
+          <PlotWithInsights
+            title="Ward 23 Commuter Mode Distribution (Census 2021)"
+            plots={[
+              {
+                label: "Driving (Ward 23)",
+                src: "/bikeshare iframe/census_driving_ward23.html",
+                image: "/projects/bikeshare/census_driving_map.png"
+              },
+              {
+                label: "Public Transit (Ward 23)",
+                src: "/bikeshare iframe/census_pt_ward23.html",
+                image: "/projects/bikeshare/census_pt_map.png"
+              },
+              {
+                label: "Walking (Ward 23)",
+                src: "/bikeshare iframe/census_walking_ward23.html",
+                image: "/projects/bikeshare/census_walking_map.png"
+              },
+              {
+                label: "Biking (Ward 23)",
+                src: "/bikeshare iframe/census_biking_ward23.html",
+                image: "/projects/bikeshare/census_biking_map.png"
+              },
+            ]}
+          />
+
+          <p className="leading-relaxed mt-6">
+            Comparison with city-wide data shows a clear "micro-mobility gap." While downtown Toronto 
+            exhibits dense biking activity, Scarborough North's biking rates remain low. 
+            This is coupled with a median household income that aligns closely with the city-wide 
+            median of $84,000, suggesting that the barrier to biking is likely 
+            infrastructure and access rather than purely economic factors.
+          </p>
+
+          <PlotWithInsights
+            title="Toronto-Wide Mode Comparison"
+            plots={[
+              {
+                label: "Biking (Toronto Wide)",
+                src: "/bikeshare iframe/census_biking_toronto.html",
+                image: "/projects/bikeshare/toronto_biking.png"
+              },
+              {
+                label: "Driving (Toronto Wide)",
+                src: "/bikeshare iframe/census_driving_toronto.html",
+                image: "/projects/bikeshare/toronto_driving.png"
+              },
+              {
+                label: "Public Transit (Toronto Wide)",
+                src: "/bikeshare iframe/census_pt_toronto.html",
+                image: "/projects/bikeshare/toronto_pt.png"
+              }
+            ]}
+          />
+        </div>
+
+        {/* ----------------------------- */}
+        {/* SECTION 3 — RESEARCH FINDINGS */}
+        {/* ----------------------------- */}
+
+        <div>
+          <h4 className="text-3xl mb-6 !font-light">SURVEY & INTERVIEW INSIGHTS</h4>
+          <p className="leading-relaxed mb-4">
+            Our study engaged residents to understand why they choose their current modes 
+            and what would encourage a shift to Bike Share.
+          </p>
+
+          <PlotWithInsights
+            title="Biking Demand & Destinations"
+            plots={[
+              {
+                label: "Seasonal Usage (Spring)",
+                src: "/bikeshare iframe/biking_usage_spring.html",
+                image: "/projects/bikeshare/spring_usage.png"
+              },
+              {
+                label: "Biking Destinations",
+                src: "/bikeshare iframe/biking_destinations.html",
+                image: "/projects/bikeshare/biking_dest.png"
+              },
+              {
+                label: "Justification for Biking",
+                src: "/bikeshare iframe/biking_justification.html",
+                image: "/projects/bikeshare/biking_just.png"
+              }
+            ]}
+          />
+
+          <p className="leading-relaxed mt-6">
+            A critical finding was the "Safety vs. Ownership" barrier. Many residents reported 
+            using public transit or driving instead of biking due to the risk of bike theft and 
+            the burden of maintenance. 
+          </p>
+
+          <PlotWithInsights
+            title="Barriers & Awareness"
+            plots={[
+              {
+                label: "PT instead of Biking",
+                src: "/bikeshare iframe/pt_instead_of_bike.html",
+                image: "/projects/bikeshare/pt_barriers.png"
+              },
+              {
+                label: "Driving instead of Biking",
+                src: "/bikeshare iframe/driving_instead_of_bike.html",
+                image: "/projects/bikeshare/driving_barriers.png"
+              },
+              {
+                label: "Bike Share Awareness",
+                src: "/bikeshare iframe/bikeshare_awareness.html",
+                image: "/projects/bikeshare/awareness_sunburst.png"
+              }
+            ]}
+          />
+        </div>
+
+        <div>
+          <h4 className="text-3xl mb-6 !font-light">INFRASTRUCTURE PREFERENCES</h4>
+          <p className="leading-relaxed mb-6">
+            Safety rankings confirmed that hydro corridors and parks are perceived as the 
+            most comfortable environments for biking in Scarborough.
+          </p>
+
+          <ResponsiveEmbed
+            src="/bikeshare iframe/infra_hydro_corridors.html"
+            preview="/projects/bikeshare/infra_preview.png"
+            href="/bikeshare iframe/infra_hydro_corridors.html"
+            height={450}
+          />
+        </div>
+
+      </section>
     </>
   );
 }
