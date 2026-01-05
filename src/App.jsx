@@ -6,7 +6,7 @@ import ScrollTop from "./components/ScrollTop";
 import BU354 from "./pages/BU354";
 import ResumePage from "./pages/Resume";
 import BikeShare from "./pages/BikeShare";
-
+import FlightPath from "./pages/Flightpath";
 function App() {
   return (
     <div className="w-full !overflow-x-hidden">
@@ -16,6 +16,7 @@ function App() {
         <Route path="/bu354" element={<BU354/>} />
         <Route path="/resume" element={<ResumePage/>} />
         <Route path="/bikeshare" element={<BikeShare/>} />
+        <Route path="/flightpath" element={<FlightPath/>} />
         <Route path="/transitbloom" element={<ProjectPage projectNum={22} />} />
         <Route path="/yulearn" element={<ProjectPage projectNum={27} />} />
       </Routes>

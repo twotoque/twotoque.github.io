@@ -690,7 +690,7 @@ export default function BikeShare() {
             <div className="space-y-6">
               {/* BIKING TRACK */}
               <div>
-                <p className="text-3xl mb-6 !font-light">Check out my other project, Toronto Census Visualizer! An easy to use tool to view interactive demograhpic insights across all 158 Toronto neighbourhoods.</p>
+                <p className="text-3xl mb-6 !font-light">Check out my other project, Toronto Census Visualizer! An easy to use tool to view interactive demographic insights across all 158 Toronto neighbourhoods.</p>
                      <CustomButton
                   href="https://torontocensusvisualizer.com/"
                   label="Go to Toronto Census Visualizer"
