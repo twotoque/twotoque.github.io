@@ -37,7 +37,7 @@ export default function BikeShare() {
           <h4 className="mb-0">Data Analysis & Transportation Policy</h4>
           <h1 className="mt-0 mb-10">Bike Share Scarborough North Study</h1>
 
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-8 leading-relaxed">
             {/* LEFT COLUMN — OVERVIEW */}
             <div className="md:w-5/7 space-y-4">
               <h4 className="!font-light mb-4">OVERVIEW</h4>

@@ -244,7 +244,7 @@ console.log(projectSections)
         <h4 className="mb-0">UX Design</h4>
         <h1 className="mt-0 mb-10">{projectDetails.projects.title}</h1>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8 leading-relaxed">
           <div className="md:w-5/7 space-y-4">
             <h4 className="!font-light mb-4">OVERVIEW</h4>
             <p>{projectDetails.overview}</p>

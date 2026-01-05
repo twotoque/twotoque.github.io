@@ -5,10 +5,34 @@ import PlotWithInsights from "@/components/MultiPlotEmbed";
 import DropdownSection from "@/components/Dropdown";
 import LogoTitle from "@/components/Role";
 import ResponsiveEmbed from "@/components/MobileIframe";
+import SVGFrameViewer from "@/components/SVGFrame";
 export default function Flightpath() {
   // Static brand colour for BU354
   const colour = "#007bcd";
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+    const dijkstras = [
+       "/flightpath/dijkstra1.svg",
+       "/flightpath/dijkstra2.svg",
+       "/flightpath/dijkstra3.svg",
+       "/flightpath/dijkstra4.svg",
+       "/flightpath/dijkstra5.svg",
+       "/flightpath/dijkstra6.svg",
+       "/flightpath/dijkstra7.svg",
+       "/flightpath/dijkstra8.svg",
+    ];
+
+    const reconstruct = [
+        "/flightpath/reconstruct1.svg",
+        "/flightpath/reconstruct2.svg",
+        "/flightpath/reconstruct3.svg",
+        "/flightpath/reconstruct4.svg",
+        "/flightpath/reconstruct5.svg",
+        "/flightpath/reconstruct6.svg",
+        "/flightpath/reconstruct7.svg",
+        "/flightpath/reconstruct8.svg",
+     ];
+
 
   return (
     <>
@@ -20,7 +44,7 @@ export default function Flightpath() {
       {/* SECTION 1 — PROJECT OVERVIEW */}
       {/* ----------------------------- */}
 
-      <section className="min-h-[90vh] h-auto">
+      <section className="min-h-[90vh] h-auto ">
         {/* HERO */}
         <div style={{ background: colour }}>
           <div className="headerBody flex justify-center">
@@ -33,11 +57,11 @@ export default function Flightpath() {
         </div>
 
         {/* PROJECT OVERVIEW MASTER (same structure as ProjectPage) */}
-        <div className="headerBody">
+        <div className="headerBody ">
           <h4 className="mb-0">Full-Stack Development</h4>
           <h1 className="mt-0 mb-10">FlightPath Downsview</h1>
 
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-8 leading-relaxed">
             {/* LEFT COLUMN — OVERVIEW */}
             <div className="md:w-5/7 space-y-4">
               <h4 className="!font-light mb-4">OVERVIEW</h4>
@@ -77,7 +101,7 @@ export default function Flightpath() {
 
               <h4 className="!font-light mb-4">TOOLS</h4>
               <p>
-                <b>QGIS, React, TypeScript</b>
+                <b>QGIS, React, TypeScript, Python, PostgreSQL</b>
               </p>
             </div>
           </div>
@@ -107,7 +131,7 @@ export default function Flightpath() {
     Taking inspiration from navigation apps like <strong>Transit</strong> which use clear, visible text instructions and real-time updates, I saw an opportunity to digitize and make this part of the program accessible. By integrating location-aware storytelling and visual prompts, we could ensure that every rider, regardless of their hearing ability, has a front-row seat to the history of Downsview Park. 
   </p>
 
-   <div style={{ background: colour }}>
+   <div style={{ background: "#202020" }}>
           <div className="headerBody flex justify-center">
             <img
               className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
@@ -132,6 +156,22 @@ export default function Flightpath() {
    Pathfinder is a shortest-path feature powered by Dijkstra’s algorithm based on a weighted bi-directional graph, helping users find the quickest route between attractions within Downsview Park.
     </p>
 
+
+            <div style={{ background: "#fffdf2" }}>
+            <div className="headerBody flex justify-center">
+                <img
+                className="w-full h-auto max-w-[100%] md:max-h-[30rem] object-contain"
+                src="/flightpath/filesystem.svg"
+                alt="Full weighted bi-directional graph of Downsview Park's attractions"
+                />
+                </div>
+                </div>
+
+            <p className="pb-10">
+            Image: relationship between each node and edge.
+            </p>
+            
+
 <p>This graph consists of nodes defined as .geojson files in <code>./geojson/</code>. Naming structure of the node is just the node name (e.g. <code>NorthFarm.geojson</code>, think of it as a park attraction), and contains a neighbour array with the filenames of all of its neighbour edges (e.g. <code>"neighbours": [ "KeeleWycombe_to_NorthFarm", "NorthFarm_to_NorthPlaza" ]</code>).</p>
             <p> Each edge is defined in the <code>./geojson/paths/</code> folder with the naming structure being <code>A_to_B.geojson</code> (e.g. <code>KeeleWycombe_to_NorthFarm.geojson</code>, think of it as a pathway to connect various attractions). Each edge contains a MultiLineString or LineString with a feature containing the properties:</p>
             <ul className="list-disc pl-6">
@@ -140,12 +180,12 @@ export default function Flightpath() {
             </ul>
             <p>The combined nodes and edges are called by the function <code>buildGraph()</code> found in <code>./src/context/GraphContext.tsx</code> to build the weighted graph. <i>The visual length of edges in the figure does not reflect their true weights; this is not important, as the program does not use the figure for calculations.</i></p>
            
-            <div style={{ background: colour }}>
+            <div style={{ background: "#fffdf2" }}>
             <div className="headerBody flex justify-center">
                 <img
                 className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
-                src="/projects/bu354/image 9.png"
-                alt="BU354 Dashboard Hero"
+                src="/flightpath/buildGraph.svg"
+                alt="Full weighted bi-directional graph of Downsview Park's attractions"
                 />
                 </div>
                 </div>
@@ -159,17 +199,7 @@ export default function Flightpath() {
             <li><code>Previous</code> (string): the name of the previous node</li>
           </ul>
 
-          
-             <div style={{ background: colour }}>
-            <div className="headerBody flex justify-center">
-                <img
-                className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
-                src="/projects/bu354/image 9.png"
-                alt="BU354 Dashboard Hero"
-                />
-                </div>
-                </div>
-
+          <SVGFrameViewer svgPaths={dijkstras} />
             <div className="w-full max-w-full overflow-hidden scale-50 origin-left sm:scale-100">
             
 
@@ -190,16 +220,7 @@ export default function Flightpath() {
 
 
 
-             <div style={{ background: colour }}>
-            <div className="headerBody flex justify-center">
-                <img
-                className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
-                src="/projects/bu354/image 9.png"
-                alt="BU354 Dashboard Hero"
-                />
-                </div>
-                </div>
-
+           <SVGFrameViewer svgPaths={reconstruct} />
             
 
             <p className="pb-10">
@@ -402,6 +423,53 @@ export default function Flightpath() {
           <h4 className="pt-3 text-3xl mb-6 !font-light">QGIS MAINTENANCE</h4>
           <p>The GeoJSONs are maintained mainly by QGIS. Adjustments can be made in the .qgz and .qgs files in the <code>/qgis</code> root folder, and can exported as <code>/qgis/QGISexport.py</code> in QGIS' Python console. Ensure that these polygons are GeoJSONs; ESRI Shapefiles are not supported. Ensure that the length parameter are in metres, not in decimal degrees (CRS84). Use the Python script found in <code>/qgis/degToMeter.py</code> to convert it to the <code>degree</code> parameter.</p>
 
+
+  <h4 className="text-3xl mb-6 !font-light">TECH STACK</h4>
+
+      <div className="flex flex-col gap-3">
+        
+      <LogoTitle
+        logoSrc="./tech/typescript.svg"
+        title="TypeScript"
+        subtitle="Front and Backend Programming Language"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/react.svg"
+        title="React"
+        subtitle="Frontend"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/supabase.jpg"
+        title="Supabase"
+        subtitle="Database"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/postgresql.svg"
+        title="PostgreSQL"
+        subtitle="Database Language"
+        ></LogoTitle>
+      <LogoTitle
+        logoSrc="./tech/qgis.svg"
+        title="QGIS"
+        subtitle="Geographic Information System"
+        ></LogoTitle>
+
+      <LogoTitle
+        logoSrc="./tech/python.svg"
+        title="Python"
+        subtitle="Data Processing Programming Language"
+        ></LogoTitle>
+        </div>
+
+     <h4 className="text-3xl mb-6 !font-light">HOW IT LOOKS</h4>
+        
+<iframe
+        src="https://www.youtube.com/embed/_2e63mYgI3g"
+        title="YouTube video player"  
+        className="w-full h-auto  aspect-video mb-10"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
 
 </section>
     </>

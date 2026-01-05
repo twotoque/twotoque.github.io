@@ -35,7 +35,7 @@ export default function BU354() {
           <h4 className="mb-0">Product Design & Full-Stack Development</h4>
           <h1 className="mt-0 mb-10">BU354 Assignment Website</h1>
 
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-8 leading-relaxed">
             {/* LEFT COLUMN — OVERVIEW */}
             <div className="md:w-5/7 space-y-4">
               <h4 className="!font-light mb-4">OVERVIEW</h4>
@@ -702,6 +702,12 @@ users would meaningfully notice the difference.
         logoSrc="./tech/react.svg"
         title="React"
         subtitle="Frontend"
+        ></LogoTitle>
+
+      <LogoTitle
+        logoSrc="./tech/next.svg"
+        title="Next.js"
+        subtitle="Framework"
         ></LogoTitle>
       <LogoTitle
         logoSrc="./tech/betterauth.png"
