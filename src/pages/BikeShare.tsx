@@ -898,7 +898,7 @@ Based on survey responses, interviews, and supporting census data, several key p
   <li>
     A Bike Share Toronto station should be placed in Woodside Square, Milliken GO station, and along the hydro corridor. Future expansion should include the redevelopment of Malvern Town Centre concurrent with bike infrastructure expansion and further redevelopment along the area.
     <ul>
-      <li>Various interviewees responded about how they frequented stations like Milliken for downtown travel, Woodside/STC/Malvern Town Centre for shopping.</li>
+      <li>Various interviewees responded about how they frequented stations like Milliken for downtown travel, Woodside Square/Scarborough Town Centre/Malvern Town Centre for shopping.</li>
       <li>While various residents responded that they drove or took public transportation to the area, they preferred/would be open to biking.</li>
         </ul>
   </li>
