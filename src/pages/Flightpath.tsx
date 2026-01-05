@@ -200,14 +200,12 @@ export default function Flightpath() {
           </ul>
 
           <SVGFrameViewer svgPaths={dijkstras} />
-            <div className="w-full max-w-full overflow-hidden scale-50 origin-left sm:scale-100">
             
 
             <p className="pb-10">
             Image: diagram of an example request to <code>dijkstras()</code> from MiniMound to Playground.
             </p>
 
-            </div>
           <p>This function works like this:</p>
           <ul className="list-disc pl-6">
             <li><strong>1. </strong> Sets all of the node distances to infinity except the starting one to zero</li>

@@ -5,6 +5,7 @@ import PlotWithInsights from "@/components/MultiPlotEmbed";
 import DropdownSection from "@/components/Dropdown";
 import LogoTitle from "@/components/Role";
 import ResponsiveEmbed from "@/components/MobileIframe";
+import ImageGallery from "@/components/ImageGallery";
 export default function BikeShare() {
   // Static brand colour for BU354
   const colour = "#387f47";
@@ -146,7 +147,7 @@ export default function BikeShare() {
           <ul className="text-lg list-disc pl-6 space-y-4 mt-2 mb-8">
             <li>
               <strong>Biking Track:</strong> Assessed seasonal frequency, primary destinations (work, home, shopping, worship), 
-              and a safety ranking of infrastructure—ranging from hydro corridors to major roads without bike lanes.
+              and a safety ranking of infrastructure, ranging from hydro corridors to major roads without bike lanes.
             </li>
             <li>
               <strong>Public Transportation Track:</strong> Evaluated last-mile walking distances, the frequency 
@@ -319,9 +320,25 @@ export default function BikeShare() {
             </div>
           </div>
 
+          <h4 className="text-3xl mb-6 !font-light">INFRASTRUCTURE-RELATED QUESTIONS</h4>
+          <p className="leading-relaxed mb-6">
+           During the interview process we also asked where do people feel most safe / least safe biking. We defined these into several categories: 
+          </p>
+
+<ImageGallery
+  images={[
+    { label: "Major roads without bike lanes", src: "/projects/bikeshare/major-without.png", sublabel:"Major roads without bike lanes; Example: Finch Avenue East" },
+{ label: "Major roads with bike lanes", src: "/projects/bikeshare/major-bikelane.png", sublabel:"Major roads with bike lanes; Example: Huntingwood Drive" },
+{ label: "Hydro trails", src: "/projects/bikeshare/hydro.png", sublabel:"Hydro trails; Example: Finch Hydro Corridor" },
+{ label: "Parks", src: "/projects/bikeshare/parks.png", sublabel:"Parks; Example: Milliken Park" },
+{ label: "Residential Roads", src: "/projects/bikeshare/residental.png", sublabel:"Residential Roads; Example: Berner Trail, Dibgate Blvd" },
+
+  ]}
+/>
+
           <h4 className="text-3xl mb-6 !font-light">MARKETING</h4>
           <p className="leading-relaxed mb-6">
-            Several social media graphics and posters were designed by me in Adobe Illustrator to promote the survey both online and at in-person events.
+            I designed several social media graphics and posters in Adobe Illustrator to promote the survey both online and at in-person events.
             These events included our summer BBQ, in local community centres and libraries, as well as the "Ride the Meadowway" event. In total, we interviewed more than 15+ residents and got over 55+ survey respondents.
         
           </p>
@@ -637,22 +654,22 @@ export default function BikeShare() {
               {
                 label: "Driving (Ward 23)",
                 src: "/bikeshare iframe/census_driving_ward23.html",
-                image: "/projects/bikeshare/census_driving_map.png"
+                image: "/bikeshare pic/census-driving.png"
               },
               {
                 label: "Public Transit (Ward 23)",
                 src: "/bikeshare iframe/census_pt_ward23.html",
-                image: "/projects/bikeshare/census_pt_map.png"
+                image: "/bikeshare pic/census-pt.png"
               },
               {
                 label: "Walking (Ward 23)",
                 src: "/bikeshare iframe/census_walking_ward23.html",
-                image: "/projects/bikeshare/census_walking_map.png"
+                image: "/bikeshare pic/census-walk.png"
               },
               {
                 label: "Biking (Ward 23)",
                 src: "/bikeshare iframe/census_biking_ward23.html",
-                image: "/projects/bikeshare/census_biking_map.png"
+                image: "/bikeshare pic/census-bike.png"
               },
             ]}
           />
@@ -661,8 +678,11 @@ export default function BikeShare() {
             Comparison with city-wide data shows a clear "micro-mobility gap." While downtown Toronto 
             exhibits dense biking activity, Scarborough North's biking rates remain low. 
             This is coupled with a median household income that aligns closely with the city-wide 
-            median of $84,000, suggesting that the barrier to biking is likely 
-            infrastructure and access rather than purely economic factors.
+            median of $84,000 (<i><a href="https://www.toronto.ca/wp-content/uploads/2024/01/93f4-CityPlanning-2021-Census-Profile-Ward-23.pdf">2024 City of Toronto Ward Profile</a></i>,  p.31)
+            , suggesting that the barrier to biking is likely 
+            infrastructure and access rather than purely economic factors. This is supported in a 
+            paper by <i>Young et. al, </i>, with findings showing that some infrastructure (such as routes) led to a 45.2% increase in 
+            Traffic Analysis Zone (TAZ) level bike share ridership. The same paper found that socioeconomic variables and employment status was insignificant with cycling usage (Young et. al, 2021, <i><a href="https://www.tcat.ca/wp-content/uploads/2016/09/Mapping-Cycling-Potential-in-Toronto.pdf">Mapping Cycling Potential in Toronto</a></i>, p.9-13).
           </p>
 
           <PlotWithInsights
@@ -671,17 +691,22 @@ export default function BikeShare() {
               {
                 label: "Biking (Toronto Wide)",
                 src: "/bikeshare iframe/census_biking_toronto.html",
-                image: "/projects/bikeshare/toronto_biking.png"
+                image: "/bikeshare pic/toronto_biking.png"
               },
               {
                 label: "Driving (Toronto Wide)",
                 src: "/bikeshare iframe/census_driving_toronto.html",
-                image: "/projects/bikeshare/toronto_driving.png"
+                image: "/bikeshare pic/toronto_driving.png"
               },
               {
                 label: "Public Transit (Toronto Wide)",
                 src: "/bikeshare iframe/census_pt_toronto.html",
-                image: "/projects/bikeshare/toronto_pt.png"
+                image: "/bikeshare pic/toronto_pt.png"
+              },
+              {
+                label: "Walking (Toronto Wide)",
+                src: "/bikeshare iframe/census_walking_toronto.html",
+                image: "/bikeshare pic/toronto_walk.png"
               }
             ]}
           />
@@ -709,8 +734,12 @@ export default function BikeShare() {
             Our study engaged residents to understand why they choose their current modes 
             and what would encourage a shift to Bike Share.
           </p>
+          <p className="leading-relaxed mb-4">
+             Biking remains relatively high in Ward 23 in the spring, summer, and fall, and dips in the winter. This is a theme
+             consistent across Toronto.
+          </p>
 
-          <PlotWithInsights
+<PlotWithInsights
             title="Biking Demand & Destinations"
             plots={[
               {
@@ -718,6 +747,34 @@ export default function BikeShare() {
                 src: "/bikeshare iframe/biking_usage_spring.html",
                 image: "/projects/bikeshare/spring_usage.png"
               },
+              {
+                label: "Seasonal Usage (Summer)",
+                src: "/bikeshare iframe/biking_usage_summer.html",
+                image: "/projects/bikeshare/summer_usage.png"
+              },
+              {
+                label: "Seasonal Usage (Fall)",
+                src: "/bikeshare iframe/biking_usage_fall.html",
+                image: "/projects/bikeshare/fall_usage.png"
+              },
+              {
+                label: "Seasonal Usage (Winter)",
+                src: "/bikeshare iframe/biking_usage_winter.html",
+                image: "/projects/bikeshare/winter_usage.png"
+              },
+            ]}
+          />
+
+
+          <p className="leading-relaxed mt-6">
+                Residents primarily bike to work, shopping areas, and local destinations.
+                Motivations for biking are evenly split across convenience, cost, personal health, 
+                and environmental considerations.
+
+            </p>
+          <PlotWithInsights
+            title="Biking Demand & Destinations"
+            plots={[
               {
                 label: "Biking Destinations",
                 src: "/bikeshare iframe/biking_destinations.html",
@@ -738,11 +795,18 @@ export default function BikeShare() {
             and maintained by the service, making cycling a more viable option for those hesitant to own a bike.
           </p>
 
+          <p className="leading-relaxed mt-6">
+            Likewise, many residents said that they took public transportation and drove instead of biking 
+            due to distance and weather. Bike Share is well-suited for short trips and can be a convenient option
+            for first/last-mile connections to transit, especially when integrated with transit hubs.
+          </p>
+
+
           <PlotWithInsights
             title="Barriers & Awareness"
             plots={[
               {
-                label: "PT instead of Biking",
+                label: "Public Transit instead of Biking",
                 src: "/bikeshare iframe/pt_instead_of_bike.html",
                 image: "/projects/bikeshare/pt_barriers.png"
               },
@@ -764,15 +828,49 @@ export default function BikeShare() {
           <h4 className="text-3xl mb-6 !font-light">INFRASTRUCTURE PREFERENCES</h4>
           <p className="leading-relaxed mb-6">
             Safety rankings confirmed that hydro corridors and parks are perceived as the 
-            most comfortable environments for biking in Scarborough.
+            most comfortable environments for biking in Scarborough. Conversely, major roads
+            without bike lanes are seen as the least safe. This highlights the need for 
+            Bike Share stations to be strategically placed near safe biking infrastructure 
+            to encourage usage.
           </p>
 
-          <ResponsiveEmbed
-            src="/bikeshare iframe/infra_hydro_corridors.html"
-            preview="/projects/bikeshare/infra_preview.png"
-            href="/bikeshare iframe/infra_hydro_corridors.html"
-            height={450}
+           <PlotWithInsights
+            title="Barriers & Awareness"
+            plots={[
+              {
+                label: "Biking on Hydro Corridors",
+                src: "/bikeshare iframe/infra_hydro_corridors.html",
+                image: "/projects/bikeshare/infra_preview.png",
+              },
+              {
+                label: "Biking in Parks",
+                src: "/bikeshare iframe/infra_parks.html",
+                image: "/projects/bikeshare/infra_preview.png",
+              },
+              {
+                label: "Biking on Major Roads without Bike Lanes",
+                src: "/bikeshare iframe/infra_major_wobl.html",
+                image: "/projects/bikeshare/infra_preview.png",
+              },
+              {
+                label: "Biking on Major Roads with Bike Lanes",
+                src: "/bikeshare iframe/infra_major_bikelane.html",
+                image: "/projects/bikeshare/infra_preview.png",
+              },
+              {
+                label: "Biking on Major Roads in Residential Areas",
+                src: "/bikeshare iframe/infra_residental.html",
+                image: "/projects/bikeshare/infra_preview.png",
+              },
+              {
+                label: "Biking on Major Roads on Sidewalks",
+                src: "/bikeshare iframe/infra_sidewalks.html",
+                image: "/projects/bikeshare/infra_preview.png",
+              },
+            ]}
           />
+
+          
         </div>
 
 <div>
@@ -790,11 +888,6 @@ export default function BikeShare() {
   <PlotWithInsights
     title="Biking Usage, Destinations, and Motivations"
     plots={[
-      {
-        label: "Seasonal Biking Usage",
-        src: "/bikeshare iframe/biking_usage_spring.html",
-        image: "/projects/bikeshare/biking_usage.png",
-      },
       {
         label: "Biking Destinations",
         src: "/bikeshare iframe/biking_destinations.html",
@@ -819,8 +912,13 @@ export default function BikeShare() {
     title="Public Transportation Destinations and Barriers"
     plots={[
       {
-        label: "Public Transit Destinations",
+        label: "Public Transit Destinations (specific)",
         src: "/bikeshare iframe/pt_destinations_filtered.html",
+        image: "/projects/bikeshare/pt_destinations.png",
+      },
+      {
+        label: "Public Transit Destinations (general)",
+        src: "/bikeshare iframe/pt_destinations_general.html",
         image: "/projects/bikeshare/pt_destinations.png",
       },
       {
@@ -829,9 +927,14 @@ export default function BikeShare() {
         image: "/projects/bikeshare/pt_barriers.png",
       },
       {
-        label: "Bikes on Transit",
+        label: "Using Bikes on Transit",
         src: "/bikeshare iframe/pt_bikes_on_transit.html",
         image: "/projects/bikeshare/pt_bikes.png",
+      },
+      {
+        label: "Using Bikes on Transit (sunburst)",
+        src: "/bikeshare iframe/pt_bikes_sunburst.html",
+        image: "/projects/bikeshare pic/pt_bikes_sunburst.png",
       },
     ]}
   />
@@ -954,7 +1057,45 @@ Based on survey responses, interviews, and supporting census data, several key p
   </li>
 </ul>
 
-      </section>
+ <h4 className="text-3xl mb-6 !font-light">OUTCOMES</h4>
+
+   <div style={{ background: colour }}>
+          <div className="headerBody flex justify-center">
+            <img
+              className="w-full h-auto max-w-[100%] max-h-[40rem] object-contain"
+              src="/projects/bikeshare/bikeshare.jpg"
+              alt="Bike Share station on Brimley Road near East Highland Creek Trail"
+            />
+          </div>
+        </div>
+
+
+        <p className="leading-relaxed mt-6">
+Ward 23 now has 5 new stations across our ward at convenient
+locations along our bike routes (as of January 2026), giving affordable access to bikes for short trips and providing
+more alternative and sustainable options to get around. Station locations include:</p>
+  <ul className="text-lg list-disc pl-6 space-y-2 mt-2">
+  <li>
+    Brimley Road / East Highland Creek Trail (shown above)
+  </li>
+  <li>
+    Agincourt Recreation Centre
+  </li>
+  <li>
+    Pitfield Road / McCowan Road
+  </li>
+  <li>
+    Brimwood Blvd / North Scarborough Loop
+  </li>
+  <li>
+    Milliken GO Station (upcoming)
+  </li>
+  </ul>
+
+ <p className="leading-relaxed mt-6">
+Councilor Myers' office will continue to advocate for bike lanes and better regulations of e-bikes and e-scooters. </p>
+
+     </section>
       
     </>
   );
