@@ -39,7 +39,7 @@ const SVGFrameViewer = ({ svgPaths = [] }: { svgPaths?: string[] }) => {
         <div className="flex items-center gap-4 mb-4">
           <button onClick={() => setCurrentFrame(Math.max(0, currentFrame - 1))} disabled={currentFrame === 0} className="p-2 border rounded hover:bg-gray-100 disabled:opacity-50"><i className="fas fa-chevron-left"></i></button>
           <button onClick={() => setCurrentFrame(Math.min(svgContents.length - 1, currentFrame + 1))} disabled={currentFrame === svgContents.length - 1} className="p-2 border rounded hover:bg-gray-100 disabled:opacity-50"><i className="fas fa-chevron-right"></i></button>
-          <span className="text-sm">{currentFrame + 1} / {svgContents.length}</span>
+          <p className="text-sm">{currentFrame + 1} / {svgContents.length}</p>
         </div>
         <input type="range" min="0" max={svgContents.length - 1} value={currentFrame} onChange={e => setCurrentFrame(parseInt(e.target.value))} className="w-full" style={{accentColor: '#3A5F3A'}}/>
       </div>
