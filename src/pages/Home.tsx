@@ -169,6 +169,9 @@ function App(){
             </li>
             <li>Entered data for more than 1000+ residents using Microsoft Excel and ForeAction
             </li>
+            <li>
+              Analyzed and visualized $170M+ in 2026 City Budget fleet commitments, emergency management expenditures, and Toronto Zoo revenue using Python and Pandas to support councillor budget briefings and policy decisions
+            </li>
           </ul>
 
           </div>
@@ -202,10 +205,6 @@ function App(){
 
           <li>
             Collaborated with startup founders and professors to research user needs and design intuitive user flows, wireframes, and prototypes across Figma, React, and TypeScript.
-          </li>
-          <li>
-            Analyzed and visualized $170M+ in 2026 City Budget fleet commitments, emergency management expenditures, and Toronto Zoo revenue using Python and Pandas to support councillor budget briefings and policy decisions
-
           </li>
           </ul>
 
