@@ -36,7 +36,7 @@ export default function ProjectArcImageSection({
 
       <div className="flex flex-col md:flex-row items-start justify-start textBody gap-8">
         {/* LEFT COLUMN */}
-        <motion.div
+        <div
           className="md:w-[30%] mb-10 sm:mb-0  flex flex-col items-center md:items-start sticky top-24 md:top-36 self-center md:self-start"
         >
           <h1 className="italic text-gray-700 text-2xl md:text-3xl font-medium mb-4 text-center md:text-left">
@@ -59,7 +59,7 @@ export default function ProjectArcImageSection({
               </ul>
             </div>
           )}
-        </motion.div>
+        </div>
 
         <div className="w-full columns-1 md:columns-2 2xl:columns-3 space-y-8">
           {images.length > 0 ? (
