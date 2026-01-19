@@ -20,6 +20,7 @@ import ProjectArcImageSection from "../components/HomeSectionPhotos";
 import CustomButton from "@/components/Button";
 import StatsSection from "@/components/HomeSectionSports";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import FeaturedProjectSection from "@/components/FeaturedProject";
 
 const SENTENCES = [
   "building digital tools that help people understand market data",
@@ -435,6 +436,8 @@ function App(){
         
       </div>
 */}
+
+
 <ProjectArcSection
   number="01"
   title="Product & Data"

@@ -27,7 +27,7 @@ const ProjectCard2: React.FC<ProjectCardProps> = ({
         alt={title}
         className="w-full max-h-100 object-cover"
       />
-      <div className="p-7 flex flex-col justify-between">
+      <div className=" p-7 flex flex-col justify-between">
         <h1 className="m-0 text-black" style={{ fontSize: "1.8rem" }}>
           {title}
 
@@ -35,11 +35,11 @@ const ProjectCard2: React.FC<ProjectCardProps> = ({
         </h1>
 
         {description && (
-          <p style={{ fontSize: "1rem" }} className="pt-3 text-gray-700">{description}</p>
+          <p style={{ fontSize: "1rem" }} className="!leading-normal pt-3 text-gray-700">{description}</p>
         )}
 
         {tech_stack && (
-          <p style={{ fontSize: "0.875rem" }} className="m-0 text-gray-500">{tech_stack}</p>
+          <p style={{ fontSize: "0.875rem" }} className="!leading-normal m-0 text-gray-500">{tech_stack}</p>
         )}
 
         {case_study && (

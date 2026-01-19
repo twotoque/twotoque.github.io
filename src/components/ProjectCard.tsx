@@ -38,11 +38,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </h1>
 
         {description && (
-          <p className="pt-3 text-sm text-sm text-gray-700">{description}</p>
+          <p className="!leading-normal pt-3 text-sm text-sm text-gray-700">{description}</p>
         )}
 
         {tech_stack && (
-          <p className="m-0 text-sm text-gray-500">{tech_stack}</p>
+          <p className="!leading-normal m-0 text-sm text-gray-500">{tech_stack}</p>
         )}
 
         {case_study && (
