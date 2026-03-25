@@ -23,6 +23,8 @@ html, body {
 p, ul, li, td, tr, th {
   line-height: 1.625; 
 }
+
+
 h3, p, ul, li, td, tr, th {
   font-family: neue-haas-grotesk-text, sans-serif;
   font-weight: 400;

@@ -127,12 +127,30 @@ function App(){
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
         Hi! I'm a 3rd year Wilfrid Laurier University computer science student with a minor in user experience design. I'm interested in software development, UI/UX design, marketing, urban planning, public policy, and data analysis.       </motion.p>
       <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       I currently work at <b>Toronto City Council (Ward 23 – Scarborough North)</b> as a Graphics Communications Assistant, contributing to event engagement and digital design using the Adobe suite, as well as data visualization work using Python. I also support founders at Wilfrid Laurier University’s Start-Up Lab through software development and Figma prototyping.
+       I currently work at <b>Toronto City Council (Ward 23 – Scarborough North)</b> as a Graphics Communications Assistant, contributing to event engagement and digital design using the Adobe suite, as well as data visualization work using Python. I will be interning at <b>Mastercard</b> in the <b>Brighterion AI team</b> as a Product Designer. Previously, I also supported founders at Wilfrid Laurier University’s Start-Up Lab through software development and Figma prototyping, as well as have years of experience within the non-profit space.
        </motion.p>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       In my free time, I enjoy dancing, going to the gym, running, and playing volleyball. I also enjoy listening to musicals <span className="text-sm">(favourites are <i>In the Heights</i>, <i>The Great Gatsby</i>, <i>Come From Away</i>, and <i>Hamilton</i>)</span>, hip-hop, pop, and R&B <span className="text-sm">(favourites are Bruno Mars, SZA, and KATSEYE)</span>.
+       In my free time, I enjoy dancing, going to the gym, running, and playing volleyball. I also enjoy listening to musicals <span className="text-sm">(favourites are <i>In the Heights</i>, <i>The Great Gatsby</i>, <i>Come From Away</i>, and <i>Hamilton</i>)</span>, hip-hop, pop, and R&B <span className="text-sm">(favourites are Bruno Mars, SZA, and TWICE)</span>.
        </motion.p>
       <div className="flex flex-col gap-3">
+        <LogoTitle
+        logoSrc="./logos/Mastercard.jpeg"
+        title="UI/UX and Product Designer, Brighterion AI"
+        subtitle="Mastercard"
+        dateJob="Incoming Summer 2026"
+        dropdownContent={
+          <div>
+            <ul className="pl-5">
+            <li>
+              Will work with the Cyber & Intelligence team to design enterprise fraud detection features for global payment systems.
+            </li>
+          </ul>
+
+          </div>
+        }
+      />
+
+
       <LogoTitle
         logoSrc="./logos/city_of_toronto_logo.jpeg"
         title="Council Administrative Assistant (Communications)"
@@ -142,19 +160,14 @@ function App(){
           <div>
             <ul className="pl-5">
             <li>
-              Designed 130+ event, newsletter, and policy graphics using Adobe Illustrator,
-              Photoshop, and InDesign in English, Tamil, and Chinese, with materials reaching
-              30,000+ households and increasing community engagement by 20% for City Councillor
-              and TTC Chair Jamaal Myers
+              Designed 130+ marketing graphics using Adobe Illustrator, InDesign, & Photoshop for City Councillor Jamaal Myers; managed branding for consultations and events reaching 30,000+ households, increasing engagement by 20%.
+            </li>
+            <li>
+              Deployed a scalable Flask application mapping city events and open datasets with Firebase, the Open Data API, Redis caching, threaded background processing, and rate-limiting. Won 2026 Toronto Open Data Award for civic innovation.
             </li>
             <li>
               Conducted interviews with 15+ residents, surveyed 55+ individuals, and analyzed
               UX-focused bike usage data using Python, Pandas, Plotly, Dash, and JSON
-            </li>
-            <li>
-              Optimized data retrieval through caching and efficient API usage in an interactive
-              map dashboard built with React, TypeScript, Flask, Firebase, and the Toronto Open
-              Data API to present events and datasets
             </li>
             <li>
               Captured and edited 1,200+ photos using a DSLR and Adobe Lightroom
@@ -165,10 +178,6 @@ function App(){
               200+ guests and 15+ sponsors
             </li>
             <li>Worked and researched on policy briefs and constituency issues, including transportation and local road parking 
-            </li>
-            <li>Recruited 30+ volunteers for our events 
-            </li>
-            <li>Entered data for more than 1000+ residents using Microsoft Excel and ForeAction
             </li>
             <li>
               Analyzed and visualized $170M+ in 2026 City Budget fleet commitments, emergency management expenditures, and Toronto Zoo revenue using Python and Pandas to support councillor budget briefings and policy decisions
@@ -420,7 +429,7 @@ function App(){
         />
         </motion.p>
       <motion.h5 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-lg text-gray-800 max-w-2xl text-center">
-       Last updated: January 1, 2026
+       Last updated: March 25, 2026
       </motion.h5>
 
       
@@ -540,11 +549,11 @@ function App(){
   title="Gym"
   stats={[
     { label: "Total distance ran", value: "763", unit: "km"},
-    { label: "5km PR", value: "24:27", unit: ""},
-    { label: "10km PR", value: "56:37", unit: ""},
-    { label: "10mile PR", value: "1:51:57", unit: ""},
+    { label: "5km run PR", value: "24:27", unit: ""},
+    { label: "10km run PR", value: "56:37", unit: ""},
+    { label: "10mile run PR", value: "1:51:57", unit: ""},
     { label: "Longest non-stop run", value: "16.35", unit: "km"},
-    { label: "Bench press", value: "135", unit: "lb"},
+    { label: "Bench press", value: "150", unit: "lb"},
     { label: "Sporting Life 10k (May 11 2025)", value: "58:08", unit: ""},
     { label: "Under Armour Toronto 10k (June 15 2024)", value: "1:11:06", unit: ""},
     { label: "Laurier recreational dance showcases", value: "5", unit: "showcases performed"},
