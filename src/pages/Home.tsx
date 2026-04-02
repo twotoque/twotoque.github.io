@@ -340,10 +340,10 @@ function App(){
               Relevant topics: Data Structures, Databases, Discrete Mathematics, Agile Design, Linear Algebra, Tree/Graph Theory, Combinatorics, Operating Systems, Digital Electronics, Statistical Hypothesis Testing
             </li>
             <li>
-              Faculty of Science Dean's List, 2024
+              Faculty of Science Dean's List, 2024, 2025
             </li>
             <li>
-              Clubs: UX Laurier, Chinese Student Association, Rereational Dance Team,  Intramural Ultimate Frisbee, Volleyball, Softball
+              Clubs: Executive Vice President (Marketing and Content Creation) at UX Laurier, Director of Marketing at the Chinese Student Association, Recreational Dance Team,  Intramural Ultimate Frisbee, Volleyball, Softball
             </li>
           </ul>
           </div>
@@ -556,7 +556,7 @@ function App(){
     { label: "Bench press", value: "150", unit: "lb"},
     { label: "Sporting Life 10k (May 11 2025)", value: "58:08", unit: ""},
     { label: "Under Armour Toronto 10k (June 15 2024)", value: "1:11:06", unit: ""},
-    { label: "Laurier recreational dance showcases", value: "5", unit: "showcases performed"},
+    { label: "Laurier recreational dance showcases", value: "6", unit: "showcases performed"},
   ]}
 />
 <ProjectArcSection
@@ -564,8 +564,12 @@ function App(){
   title="Dance"
   backgroundSvg="/projects/Gradient 1.png"
   projects={[
-    "Afrofusion",
-    "K-Pop",
+    "Afrofusion Fall 2025",
+    "K-Pop Fall 2025",
+    "Latin Spring 2026",
+    "Afrofusion Spring 2026",
+    "K-Pop Spring 2026",
+  
   ]}
   allProjects={projects}
 />
