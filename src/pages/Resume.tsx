@@ -12,7 +12,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url
 ).toString();
 
-const RESUME_URL = "/Derek Song Resume March 2026.pdf";
+const RESUME_URL = "/Derek Song Resume April 2026.pdf";
 
 export default function Resume() {
   const [numPages, setNumPages] = useState<number>(0);
